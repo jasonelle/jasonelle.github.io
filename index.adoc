@@ -1,6 +1,10 @@
-# Jasonelle
+# https://github.com/jasonelle[Jasonelle]
 
-image:https://user-images.githubusercontent.com/292738/69905238-80c70880-138f-11ea-8834-9335ef725ef9.png[Logo]
+_Jasonelle_ (a.k.a. _Jasonette_) is quite a different way to make an app. Make _iOS_ and _Android_ apps with _JSON_ (and some _JavaScript_ sparkles), loaded over _HTTP_ or local file.
+
+++++
+<img src="https://user-images.githubusercontent.com/292738/69905238-80c70880-138f-11ea-8834-9335ef725ef9.png" width="300" height="auto">
+++++
 
 ## Links
 
