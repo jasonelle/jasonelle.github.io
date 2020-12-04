@@ -18,9 +18,16 @@ For help and general chat go to our _Telegram_ group:
 
 ### Releases
 
-The latest releases are available at
+The latest releases are available at:
 
 - https://github.com/jasonelle/jasonelle/releases
+
+### Wiki
+
+Examples and documentation made by the community
+is available at:
+
+- https://github.com/jasonelle/jasonelle/wiki
 
 ### Examples and legacy docs
 
