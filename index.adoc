@@ -1,3 +1,25 @@
 # Jasonelle
 
-This is the Jasonelle Framework
+image:https://user-images.githubusercontent.com/292738/69905238-80c70880-138f-11ea-8834-9335ef725ef9.png[Logo]
+
+## Links
+
+### Community
+
+For help and general chat go to our _Telegram_ group:
+
+- https://t.me/jasonelle
+
+### Releases
+
+The latest releases are available at
+
+- https://github.com/jasonelle/jasonelle/releases
+
+### Examples and legacy docs
+
+These docs and examples are valid for version `v2` and `v1`.
+
+- https://github.com/jasonelle-archive/docs/tree/develop/examples
+
+- https://jasonelle-archive.github.io/docs/legacy/
