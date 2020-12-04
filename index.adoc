@@ -1,3 +1,5 @@
+:last-update-label!:
+:nofooter:
 # https://github.com/jasonelle[Jasonelle]
 
 _Jasonelle_ (a.k.a. _Jasonette_) is quite a different way to make an app. Make _iOS_ and _Android_ apps with _JSON_ (and some _JavaScript_ sparkles), loaded over _HTTP_ or local file.
