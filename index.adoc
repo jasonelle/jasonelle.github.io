@@ -12,9 +12,10 @@ _Jasonelle_ (a.k.a. _Jasonette_) is quite a different way to make an app. Make _
 
 ### Community
 
-For help and general chat go to our _Telegram_ group:
+For help and general chat go to our _Telegram_ group and Github Discussions:
 
-- https://t.me/jasonelle
+- https://t.me/jasonelle[Telegram Chat].
+- https://github.com/jasonelle/jasonelle/discussions[Community Forums].
 
 ### Releases
 
