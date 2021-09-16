@@ -5,7 +5,7 @@
 _Jasonelle_ (a.k.a. _Jasonette_) is quite a different way to make an app. Make _iOS_ and _Android_ apps with _JSON_ (and some _JavaScript_ sparkles), loaded over _HTTP_ or local file.
 
 ++++
-<img src="https://raw.githubusercontent.com/jasonelle/jasonelle.github.io/main/jasonelle.png" width="300" height="auto">
+<img src="https://raw.githubusercontent.com/jasonelle/jasonelle.github.io/main/jasonelle-small.png" width="300" height="auto">
 ++++
 
 ## Links
