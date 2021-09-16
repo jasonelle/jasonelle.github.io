@@ -30,10 +30,77 @@ is available at:
 
 - https://github.com/jasonelle/jasonelle/wiki
 
-### Examples and legacy docs
+These are the community docs. You can post here small snippets, solutions and common workarounds.
 
-These docs and examples are valid for version `v2` and `v1`.
+## Vision
 
-- https://github.com/jasonelle-archive/docs/tree/develop/examples
+*Mobile Apps as easy as writing a blog post*
+
+
+> We are only alive for a short while and learning any new technology is a sacrifice of time spent with those you love, creating art or walking in the woods. 👨‍👨‍👧‍👧🎨🌲 Every framework you learn is a lost opportunity to build something that could really matter to the world. Please choose responsibly. ⏳
+
+from: https://docs.stimulusreflex.com/hello-world/quickstart
+
+## What is Jasonelle?
+_Jasonelle/Jasonette_ is a small framework for making _Mobile Apps_ (Android, iOS) using _JSON_ and _JavaScript_.
+
+Advantages:
+
+- It comes with a predefined set of tools to allow native access to android and ios sdks
+- You can use your already made web app or can create something 100% native with json
+
+When to use:
+
+- You have already made a web app and need to convert it to native
+- You want to experiment and create small tools 
+- You are a single developer / small business that needs a native app but don't have funds to hire a mobile developer team
+
+When not to use:
+
+- You need something using the latest frameworks and languages
+- You have a team of native android and ios developers who can build something with other frameworks like react native
+- You have a specific use case that would need native development. In this case this would require special consideration if _Jasonette_ fits your use case.
+
+## Examples
+
+There are lots of examples available here
+
+- https://github.com/jasonelle-archive/docs/tree/develop/examples/jasonette/apps
+
+## Additional Official Docs
+
+These docs are valid for Jasonelle version `v1` and `v2`.
+They are _"legacy"_ only because they are not maintained. But they contain lots of useful information.
 
 - https://jasonelle-archive.github.io/docs/legacy/
+
+## Embed your Website
+
+Using this quick json
+
+```json
+{
+    "$jason": {
+        "body": {
+            "background": {
+                "type": "html",
+                "url": "https://www.google.com",
+                "style": {
+                    "background": "#ffffff",
+                    "progress" : "rgba(0,0,0,0)"
+                },
+                "action": {
+                    "type": "$default"
+                }
+            }
+        }
+    }
+}
+```
+
+image:https://user-images.githubusercontent.com/292738/122614693-2666c900-d055-11eb-8eec-4102af9f9cae.png[Example]
+
+## https://github.com/jasonelle/docker[Docker Setup Tools]
+
+A simple https://github.com/jasonelle/docker[Docker Configuration] is provided to help building _Android_ in Release or Debug mode.
+
