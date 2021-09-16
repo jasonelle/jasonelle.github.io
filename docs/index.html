@@ -448,7 +448,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p><em>Jasonelle</em> (a.k.a. <em>Jasonette</em>) is quite a different way to make an app. Make <em>iOS</em> and <em>Android</em> apps with <em>JSON</em> (and some <em>JavaScript</em> sparkles), loaded over <em>HTTP</em> or local file.</p>
 </div>
-<img src="https://user-images.githubusercontent.com/292738/69905238-80c70880-138f-11ea-8834-9335ef725ef9.png" width="300" height="auto">
+<img src="https://raw.githubusercontent.com/jasonelle/jasonelle.github.io/main/jasonelle.png" width="300" height="auto">
 </div>
 </div>
 <div class="sect1">
@@ -496,22 +496,151 @@ is available at:</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_examples_and_legacy_docs">Examples and legacy docs</h3>
 <div class="paragraph">
-<p>These docs and examples are valid for version <code>v2</code> and <code>v1</code>.</p>
+<p>These are the community docs. You can post here small snippets, solutions and common workarounds.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vision">Vision</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Mobile Apps as easy as writing a blog post</strong></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>We are only alive for a short while and learning any new technology is a sacrifice of time spent with those you love, creating art or walking in the woods. 👨‍👨‍👧‍👧🎨🌲 Every framework you learn is a lost opportunity to build something that could really matter to the world. Please choose responsibly. ⏳</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>from: <a href="https://docs.stimulusreflex.com/hello-world/quickstart" class="bare">https://docs.stimulusreflex.com/hello-world/quickstart</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_is_jasonelle">What is Jasonelle?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Jasonelle/Jasonette</em> is a small framework for making <em>Mobile Apps</em> (Android, iOS) using <em>JSON</em> and <em>JavaScript</em>.</p>
+</div>
+<div class="paragraph">
+<p>Advantages:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/jasonelle-archive/docs/tree/develop/examples" class="bare">https://github.com/jasonelle-archive/docs/tree/develop/examples</a></p>
+<p>It comes with a predefined set of tools to allow native access to android and ios sdks</p>
 </li>
+<li>
+<p>You can use your already made web app or can create something 100% native with json</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When to use:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have already made a web app and need to convert it to native</p>
+</li>
+<li>
+<p>You want to experiment and create small tools</p>
+</li>
+<li>
+<p>You are a single developer / small business that needs a native app but don&#8217;t have funds to hire a mobile developer team</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When not to use:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You need something using the latest frameworks and languages</p>
+</li>
+<li>
+<p>You have a team of native android and ios developers who can build something with other frameworks like react native</p>
+</li>
+<li>
+<p>You have a specific use case that would need native development. In this case this would require special consideration if <em>Jasonette</em> fits your use case.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples">Examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are lots of examples available here</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/jasonelle-archive/docs/tree/develop/examples/jasonette/apps" class="bare">https://github.com/jasonelle-archive/docs/tree/develop/examples/jasonette/apps</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_official_docs">Additional Official Docs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These docs are valid for Jasonelle version <code>v1</code> and <code>v2</code>.
+They are <em>"legacy"</em> only because they are not maintained. But they contain lots of useful information.</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="https://jasonelle-archive.github.io/docs/legacy/" class="bare">https://jasonelle-archive.github.io/docs/legacy/</a></p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_embed_your_website">Embed your Website</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using this quick json</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "$jason": {
+        "body": {
+            "background": {
+                "type": "html",
+                "url": "https://www.google.com",
+                "style": {
+                    "background": "#ffffff",
+                    "progress" : "rgba(0,0,0,0)"
+                },
+                "action": {
+                    "type": "$default"
+                }
+            }
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://user-images.githubusercontent.com/292738/122614693-2666c900-d055-11eb-8eec-4102af9f9cae.png" alt="Example"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_docker_setup_tools"><a href="https://github.com/jasonelle/docker">Docker Setup Tools</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A simple <a href="https://github.com/jasonelle/docker">Docker Configuration</a> is provided to help building <em>Android</em> in Release or Debug mode.</p>
 </div>
 </div>
 </div>

@@ -1,4 +1,5 @@
 PHONY: build
 
 b build:
-	asciidoctor index.adoc -D docs
+	asciidoctor README.adoc
+	mv README.html docs/index.html
