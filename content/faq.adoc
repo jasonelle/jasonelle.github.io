@@ -1,0 +1,82 @@
+## ❓ FAQ
+
+### How it was born?
+
+https://jasonelle.com[Jasonelle] started as a fork of _Jasonette_. But after some years,
+so many things have changed in the mobile landscape, _SwiftUI_ was born,
+many frameworks were created, trying to solve the same niche that _Jasonette_ originally has since 2016.
+
+Roughly _80%_ of the use cases for https://jasonelle.com[Jasonelle] were people trying to
+wrap their Web application, often made with "no-code" tools like https://bubble.io/[Bubble]. Those apps only needed some sparks of native functionality (like Push Notifications).
+
+It was needed fresh air and a new engine. So in 2022 it was made
+from scratch, implementing the bare functionalities needed for
+the mayority's use case. It's no longer a fork of _Jasonette_, but
+it maintains the same spirit.
+
+If you want some history you can check:
+
+- https://github.com/jasonelle-archive/jasonelle/wiki
+- https://jasonelle-archive.github.io/docs/legacy/
+
+### Will be an Android version?
+
+Android is a huge market, but we don't currently have bandwidth to create and maintain something for it. We will wait the iOS version to be
+polished enough before thinking about porting it to Android.
+
+### Jasonette's future?
+
+We think _Jasonette_ reached it's purpose. Was a pionering technology, even before _SwiftUI_. After it, many other tools implemented similar ideas and workflows.
+
+You can still use it today. But we won't be it's maintainers anymore.
+If you wish to keep the flame of _Jasonette_, feel free to fork it
+and reach to us for any question at our https://t.me/jasonelle[telegram].
+
+We are thankful for _Ethan_ and all the other wonderful people
+that participated in the _Jasonette_ project over the years.
+
+### Main Jasonelle use case?
+
+The best use case it's a web application that is running on your server.
+And you want to wrap it around a native layer, for access to features
+only available in native mobile phones.
+
+Using Jasonelle's JS bridge you can easily make native functions and
+pass data between Web and Native layers.
+
+Another good use case is a simple local html file that can be loaded.
+
+### Which are the alternatives?
+
+Currently there are many good choices, depending on your needs,
+some of them would be more suitable than Jasonelle.
+
+If you want to create a fully native experience using text representation of layouts we highly recommend https://native.live/[LiveView Native].
+It implements many ideas from _Jasonette_ and uses _SwiftUI_ and other
+bleeding edge technologies.
+
+Here is a list in no particular order:
+
+- https://native.live/ (Highly Recommended)
+- https://github.com/divkit/divkit
+- https://adaptivecards.io/
+- https://nexusdev.tools/
+- https://hyperview.org/
+- https://www.componentbox.io/
+- https://github.com/peiffer-innovations/json_dynamic_widget
+- https://pglet.io/
+- https://reactnative.dev/
+- https://nativescript.org/
+- https://ionicframework.com/
+- https://onsen.io/
+- https://jsonnet.org/ (Similar to the selecttransform engine)
+
+### Will you implement X, Y, Z?
+
+We created https://jasonelle.com[Jasonelle] mainly to scratch our own itch. We want to keep it slim, comfy and simple to use and understand.
+We value your ideas and contributions, but please keep in mind this
+is just a hobby project made in spare time.
+
+### Who made this?
+
+This project was mainly created by https://ninjas.cl[Camilo Castro (@clsource)].

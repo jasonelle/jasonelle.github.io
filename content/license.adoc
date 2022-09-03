@@ -1,0 +1,16 @@
+## 📘 License
+
+Unless explicitily stated, all source code is under the permissive https://www.mozilla.org/en-US/MPL/2.0/[MPL v2.0 (Mozilla Public License Version 2.0)] license.
+
+Is a copyleft license that is easy to comply with. You can combine the _MPL version 2.0_ software with a proprietary or differently licensed code.
+
+- If you don’t modify the code inside this library, you will have to provide just a link to the library sources.
+
+- If you modify these libs, you will have to provide just the sources for the modified files (not the entire project).
+
+### More Info
+
+- https://www.mozilla.org/en-US/MPL/2.0/[Mozila MPL 2.0]
+- https://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licences[OSS License Comparison]
+- https://shakuro.com/blog/software-licenses-explained/[Software Licenses Explained]
+- https://choosealicense.com/licenses/mpl-2.0/[Choose a License]

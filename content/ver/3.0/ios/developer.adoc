@@ -1,0 +1,19 @@
+## 💻 Environment
+
+For compilation of the project you need at least:
+
+- https://developer.apple.com/documentation/xcode-release-notes/xcode-13-release-notes[Xcode 13]
+- iOS 14
+- Swift 5
+- https://www.gnu.org/software/make/manual/make.html[Make]
+-
+
+This project aims to be self suficient, no need for external package
+managers like cocoapods or swift package manager.
+
+### Directory Structure
+
+You can see the tree structure by using the command `tree -l`.
+Some of the important directories are:
+
+- `content`: Documentation in Asciidoc
