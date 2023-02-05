@@ -152,8 +152,7 @@
 </ul>
 <h2 id="topics"><a class="header" href="#topics">Topics</a></h2>
 <h3 id="schema"><a class="header" href="#schema">Schema</a></h3>
-<pre><code class="language-graphql">{
-&quot;name&quot;: String,
+<pre><code class="language-txt">&quot;name&quot;: String,
 &quot;lastname&quot;: String,
 &quot;phone&quot;: String,
 &quot;phones&quot;: Array,
@@ -161,7 +160,6 @@
 &quot;emails: Array,
 &quot;address&quot;: String,
 &quot;addresses&quot;: Array
-}
 </code></pre>
 <h3 id="actions"><a class="header" href="#actions">Actions</a></h3>
 <ul>
@@ -225,9 +223,14 @@
 }]
 </code></pre>
 <h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
+<p><strong>Alert</strong></p>
 <p>Join all the contacts by the first name in a single string.
 And present an alert.</p>
 <pre><code class="language-js">$contacts.all().then(val =&gt; alert(val.reduce((acc, v) =&gt; acc + v.name + ' ', '')))
+</code></pre>
+<p><strong>Log</strong></p>
+<p>Logs the resulting object.</p>
+<pre><code class="language-js">$contacts.all().then(info =&gt; $logger.trace(JSON.stringify(info)))
 </code></pre>
 
                     </main>
