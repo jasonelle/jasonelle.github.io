@@ -3,7 +3,8 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Changelog - Jasonelle Documentation</title>
+        <title>Page not found - Jasonelle Documentation</title>
+        <base href="/">
 
 
         <!-- Custom HTML head -->
@@ -80,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="chapter-item expanded "><a href="CHANGELOG.html" class="active"><strong aria-hidden="true">2.</strong> Changelog</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">3.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">4.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">5.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">6.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">7.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">8.</strong> JLContacts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">4.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">5.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">6.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">7.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">8.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">9.</strong> JLContacts</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,74 +142,14 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="changelog"><a class="header" href="#changelog">Changelog</a></h1>
-<p>All notable changes to this project will be documented in this file.</p>
-<p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>.</p>
-<h2 id="v301-next"><a class="header" href="#v301-next">v3.0.1 (next)</a></h2>
-<h3 id="added"><a class="header" href="#added">Added</a></h3>
-<ul>
-<li>
-<p>Ability for extensions to inject <em>Javascript</em> to the <em>WKWebView</em> instance.</p>
-</li>
-<li>
-<p>Ability for the <em>WKWebView</em> instance to load url by using <em>deep links</em> like: <code>jasonelle://href?=https://google.cl</code>.</p>
-</li>
-<li>
-<p>Added <code>JLPhotoLibrary</code> extension that helps requesting access to photo library.</p>
-</li>
-<li>
-<p><code>$keychain</code> extension: <code>$keychain.set</code>, <code>$keychain.get</code>, <code>$keychain.remove</code> for usage within the WebView. This will enable storing data securely in the iOS's keychain.</p>
-</li>
-<li>
-<p><code>$cookies</code> extension: <code>$cookies.set</code>, <code>$cookies.get</code>, <code>$cookies.remove</code> for usage within the WebView. This will help with storing cookies in the keychain. Requires <code>$keychain</code> extension to be enabled. Also you can use <code>$cookies.Cookies</code> to access <a href="https://github.com/js-cookie/js-cookie">js-cookie</a> library.</p>
-</li>
-<li>
-<p><code>$contacts</code> extension: <code>$contacts.all</code> for usage within the WebView.</p>
-</li>
-</ul>
-<h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
-<ul>
-<li><code>WKWebView</code> triggered <code>appdidLoad</code> event more than once. Now it only triggers the event when loaded.</li>
-</ul>
-<h3 id="downloads"><a class="header" href="#downloads">Downloads</a></h3>
-<ul>
-<li><a href="https://github.com/jasonelle/jasonelle/archive/refs/heads/main.zip">iOS Main Branch</a></li>
-</ul>
-<h2 id="v300-september-2022"><a class="header" href="#v300-september-2022">v3.0.0 (September 2022)</a></h2>
-<p>This is a new engine created from scratch by <a href="https://github.com/clsource"><em>Camilo</em></a> in 2022. (AGPLv3 or MPLv2 Licenses). It was ditched the old <code>json</code> based approach to a <code>javascript</code> one. Consists of mainly a WebView engine, because there are lots of competition of &quot;native over the wire&quot; frameworks, and was better to focus on the Web App market such as Bubble users.</p>
-<ul>
-<li>New rewrite of the engine from scratch.</li>
-<li>Will only focus on webview workflow.</li>
-<li>No need for Cocoapods, Carthage or Swift PM.</li>
-<li>Native over the wire workflows delegated to other frameworks like <a href="https://native.live">Native Live</a>.</li>
-</ul>
-<h3 id="downloads-1"><a class="header" href="#downloads-1">Downloads</a></h3>
-<ul>
-<li><a href="https://github.com/jasonelle/jasonelle/releases/tag/v3.0.0">Github Release</a></li>
-</ul>
-<h2 id="legacy-versions-2016---2022"><a class="header" href="#legacy-versions-2016---2022">Legacy Versions (2016 - 2022)</a></h2>
-<p>These versions are not currently supported, but maybe something can be learned or be useful. These were using the old engine created originally by <a href="https://github.com/gliechtenstein"><em>Ethan</em></a>. (MIT License).</p>
-<h3 id="downloads-2"><a class="header" href="#downloads-2">Downloads</a></h3>
-<ul>
-<li>
-<p><a href="https://github.com/jasonelle-archive/jasonette-android/archive/refs/heads/develop.zip">Android v2</a></p>
-</li>
-<li>
-<p><a href="https://github.com/jasonelle-archive/jasonette-ios/archive/refs/heads/develop.zip">iOS v2</a></p>
-</li>
-</ul>
+                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
+<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="about.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
 
-                            <a rel="next" href="xcode/JLATTrackingManager.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -216,13 +157,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="about.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
 
-                    <a rel="next" href="xcode/JLATTrackingManager.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>

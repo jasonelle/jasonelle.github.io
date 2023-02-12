@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>JLContacts - Jasonelle Documentation</title>
+        <title>Changelog - Jasonelle Documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="../xcode/quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="../xcode/changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="../xcode/JLATTrackingManager.html"><strong aria-hidden="true">4.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="../xcode/JLApplicationBadge.html"><strong aria-hidden="true">5.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="../xcode/JLCookies.html"><strong aria-hidden="true">6.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="../xcode/JLKeychain.html"><strong aria-hidden="true">7.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="../xcode/JLPhotoLibrary.html"><strong aria-hidden="true">8.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="../xcode/JLContacts.html" class="active"><strong aria-hidden="true">9.</strong> JLContacts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="../xcode/quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="../xcode/changelog.html" class="active"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="../xcode/JLATTrackingManager.html"><strong aria-hidden="true">4.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="../xcode/JLApplicationBadge.html"><strong aria-hidden="true">5.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="../xcode/JLCookies.html"><strong aria-hidden="true">6.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="../xcode/JLKeychain.html"><strong aria-hidden="true">7.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="../xcode/JLPhotoLibrary.html"><strong aria-hidden="true">8.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="../xcode/JLContacts.html"><strong aria-hidden="true">9.</strong> JLContacts</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,106 +141,77 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="jlcontacts"><a class="header" href="#jlcontacts"><code>JLContacts</code></a></h1>
-<p>The Contacts extension provides APIs to access the user’s contact information. </p>
-<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<p>An iOS app linked on or after iOS 10 needs to include in its <code>Info.plist</code> file the usage description keys for the types of data it needs to access or it crashes. To access Contacts data specifically, it needs to include <code>NSContactsUsageDescription</code>.</p>
-<h3 id="more-info"><a class="header" href="#more-info">More Info</a></h3>
+                        <h1 id="changelog"><a class="header" href="#changelog">Changelog</a></h1>
+<p>All notable changes to this project will be documented in this file.</p>
+<p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>.</p>
+<h2 id="v301-next"><a class="header" href="#v301-next">v3.0.1 (next)</a></h2>
+<h3 id="added"><a class="header" href="#added">Added</a></h3>
 <ul>
-<li><a href="https://developer.apple.com/documentation/contacts?language=objc">Contacts Framework</a></li>
-<li><a href="https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW14">NSContactsUsageDescription</a></li>
+<li>
+<p>Ability for extensions to inject <em>Javascript</em> to the <em>WKWebView</em> instance.</p>
+</li>
+<li>
+<p>Ability for the <em>WKWebView</em> instance to load url by using <em>deep links</em> like: <code>jasonelle://href?=https://google.cl</code>.</p>
+</li>
+<li>
+<p>Added <code>JLPhotoLibrary</code> extension that helps requesting access to photo library.</p>
+</li>
+<li>
+<p><code>$keychain</code> extension: <code>$keychain.set</code>, <code>$keychain.get</code>, <code>$keychain.remove</code> for usage within the WebView. This will enable storing data securely in the iOS's keychain.</p>
+</li>
+<li>
+<p><code>$cookies</code> extension: <code>$cookies.set</code>, <code>$cookies.get</code>, <code>$cookies.remove</code> for usage within the WebView. This will help with storing cookies in the keychain. Requires <code>$keychain</code> extension to be enabled. Also you can use <code>$cookies.Cookies</code> to access <a href="https://github.com/js-cookie/js-cookie">js-cookie</a> library.</p>
+</li>
+<li>
+<p><code>$contacts</code> extension: <code>$contacts.all</code> for usage within the WebView.</p>
+</li>
+<li>
+<p>Ability to have <code>allowed</code> list of urls in configuration. Not allowed urls will launch native browser.</p>
+</li>
 </ul>
-<h2 id="topics"><a class="header" href="#topics">Topics</a></h2>
-<h3 id="schema"><a class="header" href="#schema">Schema</a></h3>
-<pre><code class="language-txt">&quot;name&quot;: String,
-&quot;lastname&quot;: String,
-&quot;phone&quot;: String,
-&quot;phones&quot;: Array,
-&quot;email&quot;: String,
-&quot;emails: Array,
-&quot;address&quot;: String,
-&quot;addresses&quot;: Array
-</code></pre>
-<h3 id="actions"><a class="header" href="#actions">Actions</a></h3>
+<h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
 <ul>
-<li><code>$contacts.all()</code>: Returns a <code>promise</code> with all the contacts.</li>
+<li><code>WKWebView</code> triggered <code>appdidLoad</code> event more than once. Now it only triggers the event when loaded.</li>
 </ul>
-<p>Example Return:</p>
-<pre><code class="language-json">[{
-    &quot;phone&quot;: &quot;5555648583&quot;,
-    &quot;phones&quot;: [&quot;5555648583&quot;, &quot;4155553695&quot;],
-    &quot;emails&quot;: [&quot;kate-bell@mac.com&quot;],
-    &quot;address&quot;: &quot;165 Davis Street\nHillsborough CA 94010&quot;,
-    &quot;lastname&quot;: &quot;Bell&quot;,
-    &quot;addresses&quot;: [&quot;165 Davis Street\nHillsborough CA 94010&quot;],
-    &quot;email&quot;: &quot;kate-bell@mac.com&quot;,
-    &quot;name&quot;: &quot;Kate&quot;
-}, {
-    &quot;phone&quot;: &quot;5554787672&quot;,
-    &quot;phones&quot;: [&quot;5554787672&quot;, &quot;4085555270&quot;, &quot;4085553514&quot;],
-    &quot;emails&quot;: [&quot;d-higgins@mac.com&quot;],
-    &quot;address&quot;: &quot;332 Laguna Street\nCorte Madera CA 94925\nUSA&quot;,
-    &quot;lastname&quot;: &quot;Higgins&quot;,
-    &quot;addresses&quot;: [&quot;332 Laguna Street\nCorte Madera CA 94925\nUSA&quot;],
-    &quot;email&quot;: &quot;d-higgins@mac.com&quot;,
-    &quot;name&quot;: &quot;Daniel&quot;
-}, {
-    &quot;phone&quot;: &quot;8885555512&quot;,
-    &quot;phones&quot;: [&quot;8885555512&quot;, &quot;8885551212&quot;],
-    &quot;emails&quot;: [&quot;John-Appleseed@mac.com&quot;],
-    &quot;address&quot;: &quot;3494 Kuhl Avenue\nAtlanta GA 30303\nUSA&quot;,
-    &quot;lastname&quot;: &quot;Appleseed&quot;,
-    &quot;addresses&quot;: [&quot;3494 Kuhl Avenue\nAtlanta GA 30303\nUSA&quot;, &quot;1234 Laurel Street\nAtlanta GA 30303\nUSA&quot;],
-    &quot;email&quot;: &quot;John-Appleseed@mac.com&quot;,
-    &quot;name&quot;: &quot;John&quot;
-}, {
-    &quot;phone&quot;: &quot;5555228243&quot;,
-    &quot;phones&quot;: [&quot;5555228243&quot;],
-    &quot;emails&quot;: [&quot;anna-haro@mac.com&quot;],
-    &quot;address&quot;: &quot;1001  Leavenworth Street\nSausalito CA 94965\nUSA&quot;,
-    &quot;lastname&quot;: &quot;Haro&quot;,
-    &quot;addresses&quot;: [&quot;1001  Leavenworth Street\nSausalito CA 94965\nUSA&quot;],
-    &quot;email&quot;: &quot;anna-haro@mac.com&quot;,
-    &quot;name&quot;: &quot;Anna&quot;
-}, {
-    &quot;phone&quot;: &quot;5557664823&quot;,
-    &quot;phones&quot;: [&quot;5557664823&quot;, &quot;7075551854&quot;],
-    &quot;emails&quot;: [&quot;hank-zakroff@mac.com&quot;],
-    &quot;address&quot;: &quot;1741 Kearny Street\nSan Rafael CA 94901&quot;,
-    &quot;lastname&quot;: &quot;Zakroff&quot;,
-    &quot;addresses&quot;: [&quot;1741 Kearny Street\nSan Rafael CA 94901&quot;],
-    &quot;email&quot;: &quot;hank-zakroff@mac.com&quot;,
-    &quot;name&quot;: &quot;Hank&quot;
-}, {
-    &quot;phone&quot;: &quot;5556106679&quot;,
-    &quot;phones&quot;: [&quot;5556106679&quot;],
-    &quot;emails&quot;: [],
-    &quot;address&quot;: &quot;1747 Steuart Street\nTiburon CA 94920\nUSA&quot;,
-    &quot;lastname&quot;: &quot;Taylor&quot;,
-    &quot;addresses&quot;: [&quot;1747 Steuart Street\nTiburon CA 94920\nUSA&quot;],
-    &quot;email&quot;: &quot;&quot;,
-    &quot;name&quot;: &quot;David&quot;
-}]
-</code></pre>
-<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
-<p><strong>Alert</strong></p>
-<p>Join all the contacts by the first name in a single string.
-And present an alert.</p>
-<pre><code class="language-js">$contacts.all().then(val =&gt; alert(val.reduce((acc, v) =&gt; acc + v.name + ' ', '')))
-</code></pre>
-<p><strong>Log</strong></p>
-<p>Logs the resulting object.</p>
-<pre><code class="language-js">$contacts.all().then(info =&gt; $logger.trace(JSON.stringify(info)))
-</code></pre>
+<h3 id="downloads"><a class="header" href="#downloads">Downloads</a></h3>
+<ul>
+<li><a href="https://github.com/jasonelle/jasonelle/archive/refs/heads/main.zip">iOS Main Branch</a></li>
+</ul>
+<h2 id="v300-september-2022"><a class="header" href="#v300-september-2022">v3.0.0 (September 2022)</a></h2>
+<p>This is a new engine created from scratch by <a href="https://github.com/clsource"><em>Camilo</em></a> in 2022. (AGPLv3 or MPLv2 Licenses). It was ditched the old <code>json</code> based approach to a <code>javascript</code> one. Consists of mainly a WebView engine, because there are lots of competition of &quot;native over the wire&quot; frameworks, and was better to focus on the Web App market such as Bubble users.</p>
+<ul>
+<li>New rewrite of the engine from scratch.</li>
+<li>Will only focus on webview workflow.</li>
+<li>No need for Cocoapods, Carthage or Swift PM.</li>
+<li>Native over the wire workflows delegated to other frameworks like <a href="https://native.live">Native Live</a>.</li>
+</ul>
+<h3 id="downloads-1"><a class="header" href="#downloads-1">Downloads</a></h3>
+<ul>
+<li><a href="https://github.com/jasonelle/jasonelle/releases/tag/v3.0.0">Github Release</a></li>
+</ul>
+<h2 id="legacy-versions-2016---2022"><a class="header" href="#legacy-versions-2016---2022">Legacy Versions (2016 - 2022)</a></h2>
+<p>These versions are not currently supported, but maybe something can be learned or be useful. These were using the old engine created originally by <a href="https://github.com/gliechtenstein"><em>Ethan</em></a>. (MIT License).</p>
+<h3 id="downloads-2"><a class="header" href="#downloads-2">Downloads</a></h3>
+<ul>
+<li>
+<p><a href="https://github.com/jasonelle-archive/jasonette-android/archive/refs/heads/develop.zip">Android v2</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jasonelle-archive/jasonette-ios/archive/refs/heads/develop.zip">iOS v2</a></p>
+</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../xcode/JLPhotoLibrary.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../xcode/quickstart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next" href="../xcode/JLATTrackingManager.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -248,10 +219,13 @@ And present an alert.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../xcode/JLPhotoLibrary.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../xcode/quickstart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next" href="../xcode/JLATTrackingManager.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>

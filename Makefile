@@ -5,3 +5,5 @@ docs d:
 	@rm -rf docs/docs
 	@cp -r ../jasonelle/docs/book docs/
 	@mv docs/book docs/docs
+# Copy the latest version to a version directory
+	@cd docs/docs && cat ../../../jasonelle/sources/xcode/.version | xargs cp -r ../../../jasonelle/docs/book
