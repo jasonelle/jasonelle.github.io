@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="about.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">4.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">5.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">6.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">7.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">8.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">9.</strong> JLContacts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">4.</strong> Working With Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">5.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">6.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">7.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">8.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">9.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">10.</strong> JLContacts</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -262,6 +262,15 @@ are a kind person who will activate this mode ethically.</p>
 <li>
 <p>Ability to have <code>allowed</code> list of urls in configuration. Not allowed urls will launch native browser.</p>
 </li>
+<li>
+<p>Added LaunchScreen file (Both in SwiftUI and Storyboard file).</p>
+</li>
+<li>
+<p>Added WebView.edgesIgnoringSafeArea(.all). Some websites need this, specially when using a navbar. Thanks to <em>@Mättu</em> in Telegram for pointing this out.</p>
+</li>
+<li>
+<p>Added meta viewport js fix for websites that do not have proper metatag. In webview.js.</p>
+</li>
 </ul>
 <h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
 <ul>
@@ -294,6 +303,176 @@ are a kind person who will activate this mode ethically.</p>
 <p><a href="https://github.com/jasonelle-archive/jasonette-ios/archive/refs/heads/develop.zip">iOS v2</a></p>
 </li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="extensions"><a class="header" href="#extensions">Extensions</a></h1>
+<p>Extensions are a great way to add new functionality and helpers
+to <em>Jasonelle</em>. They can be updated separately from the core and
+be added or removed at will.</p>
+<h2 id="adding-an-extension"><a class="header" href="#adding-an-extension">Adding an Extension</a></h2>
+<p>Extensions are a single <em>*.xcodeproj</em> (blue icon)
+that contains the project that can be added to the 
+<em>App.xcworkspace</em> (white icon) file.</p>
+<h3 id="step-1"><a class="header" href="#step-1">Step 1</a></h3>
+<p>Open <em>App.xcworkspace</em> with <em>Xcode</em> and
+look for the <em>*.xcodeproj</em> file in <em>Finder</em>.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219871592-c9f788d9-82b9-436e-b498-ec8c9de57d77.png" alt="xcodeproj" /></p>
+<h3 id="step-2"><a class="header" href="#step-2">Step 2</a></h3>
+<p>Draw it to the <em>Extensions</em> directory inside <em>Xcode</em>.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219871792-a2e6b3ab-76ac-4140-9b83-afaa166a3c2b.png" alt="extensions.1" /></p>
+<p><img src="https://user-images.githubusercontent.com/292738/219871905-4a884db2-58d7-45a1-aedd-8ab9a22f5ce2.png" alt="extensions.2" /></p>
+<h3 id="step-3"><a class="header" href="#step-3">Step 3</a></h3>
+<p>Add it to the frameworks in <em>App.xcproj</em> file.
+Be sure that <strong>Embed &amp; Sign</strong> option is selected.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219872025-bfa926e7-907e-4277-97e7-b96602889857.png" alt="added frameworks" /></p>
+<h3 id="step-4"><a class="header" href="#step-4">Step 4</a></h3>
+<p>import the extension in <strong>AppExtensions.m</strong>.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219872338-01e31f1e-3f16-4914-bf73-5b75f2ccd167.png" alt="add.extensions" /></p>
+<p>and add it to the extension registry in <code>install</code> method
+using the <code>class</code> attribute.</p>
+<p>Example: <code>[self.extensions add: JLContacts.class];</code></p>
+<p><img src="https://user-images.githubusercontent.com/292738/219872570-6e09e504-8ec2-4dec-bd53-27cd69f7800e.png" alt="install.extensions" /></p>
+<h3 id="done"><a class="header" href="#done">Done</a></h3>
+<p>If everything is ok then the extension was installed successfully, 
+maybe some other configurations would be needed depending on the extension itself.</p>
+<h2 id="removing-an-extension"><a class="header" href="#removing-an-extension">Removing an Extension</a></h2>
+<p>If you don't need an extension you can remove it from the workspace.</p>
+<h3 id="step-1-1"><a class="header" href="#step-1-1">Step 1</a></h3>
+<p>Remove (or comment) the setup code in <code>AppExtensions.m</code> file
+described in <code>Adding an Extension: Step 4</code>.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219872570-6e09e504-8ec2-4dec-bd53-27cd69f7800e.png" alt="install.extensions" /></p>
+<p><img src="https://user-images.githubusercontent.com/292738/219872338-01e31f1e-3f16-4914-bf73-5b75f2ccd167.png" alt="add.extensions" /></p>
+<h3 id="step-2-1"><a class="header" href="#step-2-1">Step 2</a></h3>
+<p>Remove the <code>framework</code> from the <em>App.xcproj</em> file.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219872025-bfa926e7-907e-4277-97e7-b96602889857.png" alt="added frameworks" /></p>
+<h3 id="step-3-1"><a class="header" href="#step-3-1">Step 3</a></h3>
+<p>Delete the <code>*.xcodeproj</code> file from the Workspace.
+It will pop up a confirmation dialog. We recommend <code>Remove Reference</code> option.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219873278-f4b6f7a2-e644-48d8-94e9-7702fb09935c.png" alt="remove reference" /></p>
+<h2 id="create-extensions"><a class="header" href="#create-extensions">Create Extensions</a></h2>
+<p>Creating extensions requires some knowledge of <code>Objective-C</code> and <code>JavaScript</code>. These instructions are for advanced users.</p>
+<h3 id="step-1-2"><a class="header" href="#step-1-2">Step 1</a></h3>
+<p>Create a new <em>xcodeproj</em> file.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219874044-bab47dc0-3d62-4e7a-b56c-73f5e9ad3e28.png" alt="new" /></p>
+<p>Select <code>Framework</code> as the template. Be sure that is in the <em>iOS</em> tab.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219874161-503cacaf-ae52-4328-bfdd-0fb856e9a4cb.png" alt="framework" /></p>
+<p>Add it to the <em>Extensions</em> directory inside the <em>App.xcworkspace</em>.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219874367-b104a4d3-7cc7-4f20-85ab-56274d19e694.png" alt="ext.1" /></p>
+<p><img src="https://user-images.githubusercontent.com/292738/219874405-f35b1b56-7703-46b3-8083-ce1408b49d5b.png" alt="ext.2" /></p>
+<h3 id="step-2-2"><a class="header" href="#step-2-2">Step 2</a></h3>
+<p>Configure the <em>iOS Deployment Target</em> to <code>14.0</code> (or the recommended version for your project).</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219875281-2b219bee-3d8b-4c52-a21d-b4fd179a438e.png" alt="d.target" /></p>
+<p>Add the <code>JLKernel</code> framework. Select <strong>Do Not Embed</strong> as the option. Since all the frameworks will be embeded in <code>App.xcproj</code> later.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219875346-48555ad5-459c-4f0c-b104-69c702f3e3f1.png" alt="d.kernel" /></p>
+<h3 id="step-3-2"><a class="header" href="#step-3-2">Step 3</a></h3>
+<p>Create the <code>*.h</code> and <code>*.m</code> files that inherits from <em>JLExtension</em>.</p>
+<p><img src="https://user-images.githubusercontent.com/292738/219875533-f3e6bf76-9010-43c3-b244-daf2b3fd7fc5.png" alt="dialog.create.1" /></p>
+<p><img src="https://user-images.githubusercontent.com/292738/219875521-aae7a10d-4341-4a1a-b406-6c840fc6cf92.png" alt="dialog.create.2" /></p>
+<p><img src="https://user-images.githubusercontent.com/292738/219875586-f48a183b-bb76-4768-9ee0-08b1755ce417.png" alt="dialog.create.3" /></p>
+<h4 id="example"><a class="header" href="#example">Example</a></h4>
+<p><strong>MyExtension.h</strong></p>
+<pre><code class="language-objective-c">
+#import &lt;Foundation/Foundation.h&gt;
+
+//! Project version number for MyExtension.
+FOUNDATION_EXPORT double MyExtensionVersionNumber;
+
+//! Project version string for MyExtension.
+FOUNDATION_EXPORT const unsigned char MyExtensionVersionString[];
+
+#import &lt;JLKernel/JLKernel.h&gt;
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface MyExtension : JLExtension
+@end
+
+NS_ASSUME_NONNULL_END
+</code></pre>
+<p><strong>MyExtension.m</strong></p>
+<pre><code class="language-objective-c">#import &quot;MyExtension.h&quot;
+
+@implementation MyExtension
+
+@end
+</code></pre>
+<h3 id="done-1"><a class="header" href="#done-1">Done</a></h3>
+<p>Now you can install it as any other extension in your <em>App.xcodeproj</em> file.</p>
+<h2 id="extension-coding"><a class="header" href="#extension-coding">Extension Coding</a></h2>
+<p>When coding an extension you can access some events and properties
+that will enable to add new features to <em>Jasonelle</em>.</p>
+<h3 id="--void-install"><a class="header" href="#--void-install"><code>- (void) install</code></a></h3>
+<p>This method will be executed when installing the extension in <code>AppDelegate</code> lifecycle. This is before all the extensions are ready, 
+because a single extension is being installed at the time.</p>
+<p>Be sure to call the <code>[super install]</code> method.</p>
+<pre><code class="language-objective-c">- (void) install {
+    [super install];
+    // your code here
+}
+</code></pre>
+<h4 id="selfhandlers"><a class="header" href="#selfhandlers"><code>self.handlers</code></a></h4>
+<p>The handlers are the names of the native bridges that will be called when used inside the webview. Must be configured in the <code>install</code> method.</p>
+<p>See <a href="https://github.com/jasonelle/jasonelle/tree/main/sources/xcode/Extensions/JLKeychain">JLKeychain</a> extension as an example with using handlers.</p>
+<pre><code class="language-objective-c">- (void) install {
+  // ...
+  self.handlers = @{
+        @&quot;$keychain.set&quot;: setHandler,
+        @&quot;$keychain.get&quot;: getHandler,
+        @&quot;$keychain.remove&quot;: removeHandler,
+        @&quot;$keychain.clear&quot;: clearHandler
+    };
+}
+</code></pre>
+<h5 id="handlers"><a class="header" href="#handlers">Handlers</a></h5>
+<p>A handler is a native function that is called within the webview.</p>
+<p>Handlers will be called using <code>$agent.trigger()</code> inside the webview.</p>
+<ul>
+<li>Example: <code>$agent.trigger('$keychain.get')</code></li>
+</ul>
+<p>They will return a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><code>JS Promise</code></a>.</p>
+<p>A wrapper can be created to call directly.</p>
+<ul>
+<li>Example: <a href="https://github.com/jasonelle/jasonelle/blob/main/sources/xcode/Extensions/JLContacts/JLContacts/JLContacts.js"><strong>JLContacts.js</strong></a></li>
+</ul>
+<pre><code class="language-js"> (() =&gt; {
+     if (window &amp;&amp; window.$myextension) {
+         return;
+     }
+     
+     window.$myextension = {};
+     window.$myextension.run = () =&gt; $agent.trigger(&quot;$myextension.run&quot;, {});
+ })();
+</code></pre>
+<h3 id="--bool-applicationuiapplication-application-didfinishlaunchingwithoptionsnullable-nsdictionary-launchoptions"><a class="header" href="#--bool-applicationuiapplication-application-didfinishlaunchingwithoptionsnullable-nsdictionary-launchoptions"><code>- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions</code></a></h3>
+<p>This method is called in <code>AppDelegate</code> after the setup and before loading the webview. Normally for post install logic. All the other extensions would be available at this point.</p>
+<h3 id="--nonnull-wkwebview-appdidloadwithwebviewnonnull-wkwebview-webview"><a class="header" href="#--nonnull-wkwebview-appdidloadwithwebviewnonnull-wkwebview-webview"><code>- (nonnull WKWebView *)appDidLoadWithWebView:(nonnull WKWebView *)webView</code></a></h3>
+<p>This method is called when the <code>WKWebView</code> is ready. You can use it to 
+inject <em>JavaScript</em> files or make additional configurations to the webview element.</p>
+<pre><code class="language-objective-c">- (nonnull WKWebView *)appDidLoadWithWebView:(nonnull WKWebView *)webView {
+    [super appDidLoadWithWebView:webView];
+    return webView;
+}
+</code></pre>
+<h4 id="examples"><a class="header" href="#examples">Examples</a></h4>
+<p>See <a href="https://github.com/jasonelle/jasonelle/tree/main/sources/xcode/Extensions/JLCookies">JLCookies</a> as an example extension that only loads a <em>JS</em> file.</p>
+<h3 id="more-methods"><a class="header" href="#more-methods">More methods</a></h3>
+<p>See which other methods are available in <a href="https://github.com/jasonelle/jasonelle/blob/main/sources/xcode/Jasonelle/JLKernel/JLKernel/Application/Extensions/JLApplicationExtensions.h">JLApplicationExtensions</a></p>
+<h3 id="filesystem-helper"><a class="header" href="#filesystem-helper">FileSystem Helper</a></h3>
+<p>You can access the filesystem by using the <code>app.utils.fs</code> helper.</p>
+<p><strong>Example</strong></p>
+<p>Reads a file named <em>JLContacts.js</em> inside the self bundle.</p>
+<pre><code class="language-objective-c">NSString * js = [self.app.utils.fs
+                     readJS:@&quot;JLContacts&quot;
+                     for:self];
+
+// If is named the same as the class then can be used like this
+NSString * js = [self.app.utils.fs
+                     readJSFor:self];
+</code></pre>
+<h3 id="extension-service-locator"><a class="header" href="#extension-service-locator">Extension Service Locator</a></h3>
+<p>You can fetch the extension instance by using the <code>app.ext</code> service locator.</p>
+<pre><code class="language-objective-c">return (JLATTrackingManager *) [self.app.ext get:JLATTrackingManager.class];
+
+return (JLApplicationBadge *) [self.app.ext get:JLApplicationBadge.class];
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlattrackingmanager"><a class="header" href="#jlattrackingmanager"><code>JLATTrackingManager</code></a></h1>
 <!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 <h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
@@ -325,7 +504,7 @@ are a kind person who will activate this mode ethically.</p>
 <li><code>$cookies.write</code>: Gets the cookie value stored in keychain and write it to document.cookie.</li>
 <li><code>$cookies.Cookies</code>: <a href="https://github.com/js-cookie/js-cookie">js-cookie</a> Helper.</li>
 </ul>
-<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
+<h3 id="examples-1"><a class="header" href="#examples-1">Examples</a></h3>
 <p><strong>Sets the cookie and save it to keychain</strong></p>
 <pre><code class="language-js">// Set a value inside document.cookies
 $cookies.Cookies.set('name', 'Ethan'); 
@@ -443,7 +622,7 @@ $cookies.remove().then(val =&gt; alert(val));
     &quot;name&quot;: &quot;David&quot;
 }]
 </code></pre>
-<h3 id="examples-1"><a class="header" href="#examples-1">Examples</a></h3>
+<h3 id="examples-2"><a class="header" href="#examples-2">Examples</a></h3>
 <p><strong>Alert</strong></p>
 <p>Join all the contacts by the first name in a single string.
 And present an alert.</p>
