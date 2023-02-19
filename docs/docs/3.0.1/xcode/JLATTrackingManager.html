@@ -142,14 +142,20 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="jlattrackingmanager"><a class="header" href="#jlattrackingmanager"><code>JLATTrackingManager</code></a></h1>
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+<p>Optionally install <a href="https://developer.apple.com/documentation/apptrackingtransparency">ATTracking Support</a>
+Request user authorization to access app-related data for tracking the user or the device.
+Ensure to configure the plist as well.
+If your app calls the App Tracking Transparency API, you must provide custom text, known as a usage-description string, which displays as a system-permission alert request. The usage-description string tells the user why the app is requesting permission to use data for tracking the user or the device.</p>
 <h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+<p>Request user authorization to access app-related data for tracking the user or the device.</p>
 <h2 id="topics"><a class="header" href="#topics">Topics</a></h2>
-<h3 id="group"><a class="header" href="#group"><!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@--></a></h3>
-<ul>
-<li><!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@--></li>
-</ul>
+<h3 id="installation"><a class="header" href="#installation">Installation</a></h3>
+<p>The <em>ATTracking</em> message will be triggered on <code>install</code>.</p>
+<h4 id="infoplist"><a class="header" href="#infoplist">info.plist</a></h4>
+<p>Configure your <code>info.plist</code> and include the <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nsusertrackingusagedescription?language=objc"><code>NSUserTrackingUsageDescription</code></a> key and fill it with the description.</p>
+<h3 id="properties"><a class="header" href="#properties">Properties</a></h3>
+<h4 id="status"><a class="header" href="#status">status</a></h4>
+<p>Returns the current <a href="https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanagerauthorizationstatus?language=objc">status</a> for the ATTracking.</p>
 
                     </main>
 
