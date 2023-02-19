@@ -305,6 +305,13 @@ inject <em>JavaScript</em> files or make additional configurations to the webvie
 NSString * js = [self.app.utils.fs
                      readJSFor:self];
 </code></pre>
+<h3 id="webview-helper"><a class="header" href="#webview-helper">WebView Helper</a></h3>
+<p>To help injecting scripts to webview you can use <code>app.utils.webview</code> helper.</p>
+<pre><code class="language-objective-c">webView = [self.app.utils.webview inject:@&quot;js.cookie.min&quot; intoWebView:webView for:self];
+
+// Reads the filename as Classname.js
+return [self.app.utils.webview inject:self intoWebView:webView];
+</code></pre>
 <h3 id="extension-service-locator"><a class="header" href="#extension-service-locator">Extension Service Locator</a></h3>
 <p>You can fetch the extension instance by using the <code>app.ext</code> service locator.</p>
 <pre><code class="language-objective-c">return (JLATTrackingManager *) [self.app.ext get:JLATTrackingManager.class];
