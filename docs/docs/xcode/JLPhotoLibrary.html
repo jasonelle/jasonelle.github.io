@@ -142,14 +142,18 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="jlphotolibrary"><a class="header" href="#jlphotolibrary"><code>JLPhotoLibrary</code></a></h1>
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+<p>Provides methods to requesting <a href="https://developer.apple.com/documentation/photokit/phphotolibrary">Photo Library</a> permissions</p>
 <h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+<p>It would be required if your app wants to access camera or photo library.
+Will trigger only in <code>install</code> event. Does not have webview actions yet.</p>
 <h2 id="topics"><a class="header" href="#topics">Topics</a></h2>
-<h3 id="group"><a class="header" href="#group"><!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@--></a></h3>
-<ul>
-<li><!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@--></li>
-</ul>
+<h3 id="infoplist"><a class="header" href="#infoplist">info.plist</a></h3>
+<p>Add <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nsphotolibraryusagedescription">NSPhotoLibraryUsageDescription</a> and <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription">NSCameraUsageDescription</a> permissions to info.plist</p>
+<pre><code class="language-xml">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;
+&lt;string&gt;If you want to use the photolibrary, you have to give permission.&lt;/string&gt;
+&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;
+&lt;string&gt;If you want to use the camera, you have to give permission.&lt;/string&gt;
+</code></pre>
 
                     </main>
 

@@ -142,15 +142,30 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="jlkeychain"><a class="header" href="#jlkeychain"><code>JLKeychain</code></a></h1>
-<p>Based on https://github.com/Keyflow/Keychain-iOS-ObjC</p>
+<p>Keychain extension allows storing values inside <a href="https://developer.apple.com/documentation/security/keychain_services?language=objc"><em>iOS Keychain</em></a></p>
 <h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+<p>Keychain is made as a key - value secure storage.</p>
 <h2 id="topics"><a class="header" href="#topics">Topics</a></h2>
-<h3 id="group"><a class="header" href="#group"><!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@--></a></h3>
+<h3 id="actions"><a class="header" href="#actions">Actions</a></h3>
 <ul>
-<li><!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
-</li>
+<li><code>$keychain.set</code>: Sets a key to store a value.</li>
+<li><code>$keychain.get</code>: Gets the value for a given key.</li>
+<li><code>$keychain.remove</code>: Removes a key from the keychain.</li>
+<li><code>$keychain.clear</code>: Removes all keys and values from the keychain.</li>
 </ul>
+<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<pre><code class="language-js">// Stores the number 3 in keychain
+$keychain.set('number', 3);
+
+// Get the number 3 and show an alert with it
+$keychain.get('number').then(num =&gt; alert(num));
+
+// Removes the stored number
+$keychain.remove('number');
+
+// Clears the keychain
+$keychain.clear();
+</code></pre>
 
                     </main>
 

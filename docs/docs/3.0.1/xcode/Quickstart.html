@@ -166,6 +166,13 @@
 <p>Any url that is not present in the allowed list will force open using the native browser.</p>
 <p>Check the <a href="https://github.com/jasonelle/jasonelle/blob/main/sources/xcode/App/JS/config/dev.js">Configuration File</a></p>
 <p><img src="https://user-images.githubusercontent.com/292738/218337885-a92fbeab-a210-4baa-9d75-e85aac6157cb.png" alt="config file" /></p>
+<h4 id="example"><a class="header" href="#example">Example</a></h4>
+<p>List the allowed urls.
+Otherwise it will launch native browser
+If not present will allow all urls</p>
+<p>Put the same URL from main.js here to allow it (just the domain)</p>
+<pre><code class="language-js">allowed: [&quot;file://&quot;, &quot;google.cl&quot;]
+</code></pre>
 <h3 id="4---done"><a class="header" href="#4---done">4 - Done</a></h3>
 <p>You can now configure your project as a normal XCode iOS. Change your App Icon and other settings.</p>
 <p>Happy Coding!.</p>

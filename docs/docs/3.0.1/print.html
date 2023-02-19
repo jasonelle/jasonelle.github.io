@@ -234,6 +234,13 @@ are a kind person who will <strong>activate this mode ethically</strong>.</p>
 <p>Any url that is not present in the allowed list will force open using the native browser.</p>
 <p>Check the <a href="https://github.com/jasonelle/jasonelle/blob/main/sources/xcode/App/JS/config/dev.js">Configuration File</a></p>
 <p><img src="https://user-images.githubusercontent.com/292738/218337885-a92fbeab-a210-4baa-9d75-e85aac6157cb.png" alt="config file" /></p>
+<h4 id="example"><a class="header" href="#example">Example</a></h4>
+<p>List the allowed urls.
+Otherwise it will launch native browser
+If not present will allow all urls</p>
+<p>Put the same URL from main.js here to allow it (just the domain)</p>
+<pre><code class="language-js">allowed: [&quot;file://&quot;, &quot;google.cl&quot;]
+</code></pre>
 <h3 id="4---done"><a class="header" href="#4---done">4 - Done</a></h3>
 <p>You can now configure your project as a normal XCode iOS. Change your App Icon and other settings.</p>
 <p>Happy Coding!.</p>
@@ -372,7 +379,7 @@ It will pop up a confirmation dialog. We recommend <code>Remove Reference</code>
 <p><img src="https://user-images.githubusercontent.com/292738/219875533-f3e6bf76-9010-43c3-b244-daf2b3fd7fc5.png" alt="dialog.create.1" /></p>
 <p><img src="https://user-images.githubusercontent.com/292738/219875521-aae7a10d-4341-4a1a-b406-6c840fc6cf92.png" alt="dialog.create.2" /></p>
 <p><img src="https://user-images.githubusercontent.com/292738/219875586-f48a183b-bb76-4768-9ee0-08b1755ce417.png" alt="dialog.create.3" /></p>
-<h4 id="example"><a class="header" href="#example">Example</a></h4>
+<h4 id="example-1"><a class="header" href="#example-1">Example</a></h4>
 <p><strong>MyExtension.h</strong></p>
 <pre><code class="language-objective-c">
 #import &lt;Foundation/Foundation.h&gt;
@@ -501,20 +508,25 @@ If your app calls the App Tracking Transparency API, you must provide custom tex
 <h4 id="status"><a class="header" href="#status">status</a></h4>
 <p>Returns the current <a href="https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanagerauthorizationstatus?language=objc">status</a> for the ATTracking.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlapplicationbadge"><a class="header" href="#jlapplicationbadge"><code>JLApplicationBadge</code></a></h1>
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+<p>Can manipulate <a href="https://developer.apple.com/documentation/uikit/uiapplication/1622918-applicationiconbadgenumber">Application Icon Badge Number</a> </p>
 <h2 id="overview-1"><a class="header" href="#overview-1">Overview</a></h2>
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+<p>The number currently set as the badge of the app icon on the Home screen.</p>
 <h2 id="topics-1"><a class="header" href="#topics-1">Topics</a></h2>
-<h3 id="group"><a class="header" href="#group"><!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@--></a></h3>
+<h3 id="actions"><a class="header" href="#actions">Actions</a></h3>
 <ul>
-<li><!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@--></li>
+<li><code>$badge.clear</code>: Cleans the badge number icon.</li>
+<li><code>$badge.set</code>: Sets the badge number icon.</li>
 </ul>
+<h3 id="example-2"><a class="header" href="#example-2">Example</a></h3>
+<pre><code class="language-js">$badge.set(3);
+$badge.clear();
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlcookies"><a class="header" href="#jlcookies"><code>JLCookies</code></a></h1>
 <p>A helper to work with the <code>WebView</code> cookies.</p>
 <h2 id="overview-2"><a class="header" href="#overview-2">Overview</a></h2>
-<p>Requires <code>$keychain</code> extension.</p>
+<p>Requires <a href="xcode/JLKeychain.html"><code>$keychain</code></a> extension.</p>
 <h2 id="topics-2"><a class="header" href="#topics-2">Topics</a></h2>
-<h3 id="actions"><a class="header" href="#actions">Actions</a></h3>
+<h3 id="actions-1"><a class="header" href="#actions-1">Actions</a></h3>
 <ul>
 <li><code>$cookies.set</code>: Stores document.cookie in keychain.</li>
 <li><code>$cookies.get</code>: Gets cookie value stored in keychain.</li>
@@ -541,24 +553,43 @@ $cookies.set().then(val =&gt; alert(val));
 $cookies.remove().then(val =&gt; alert(val));
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlkeychain"><a class="header" href="#jlkeychain"><code>JLKeychain</code></a></h1>
-<p>Based on https://github.com/Keyflow/Keychain-iOS-ObjC</p>
+<p>Keychain extension allows storing values inside <a href="https://developer.apple.com/documentation/security/keychain_services?language=objc"><em>iOS Keychain</em></a></p>
 <h2 id="overview-3"><a class="header" href="#overview-3">Overview</a></h2>
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+<p>Keychain is made as a key - value secure storage.</p>
 <h2 id="topics-3"><a class="header" href="#topics-3">Topics</a></h2>
-<h3 id="group-1"><a class="header" href="#group-1"><!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@--></a></h3>
+<h3 id="actions-2"><a class="header" href="#actions-2">Actions</a></h3>
 <ul>
-<li><!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
-</li>
+<li><code>$keychain.set</code>: Sets a key to store a value.</li>
+<li><code>$keychain.get</code>: Gets the value for a given key.</li>
+<li><code>$keychain.remove</code>: Removes a key from the keychain.</li>
+<li><code>$keychain.clear</code>: Removes all keys and values from the keychain.</li>
 </ul>
+<h3 id="example-3"><a class="header" href="#example-3">Example</a></h3>
+<pre><code class="language-js">// Stores the number 3 in keychain
+$keychain.set('number', 3);
+
+// Get the number 3 and show an alert with it
+$keychain.get('number').then(num =&gt; alert(num));
+
+// Removes the stored number
+$keychain.remove('number');
+
+// Clears the keychain
+$keychain.clear();
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlphotolibrary"><a class="header" href="#jlphotolibrary"><code>JLPhotoLibrary</code></a></h1>
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+<p>Provides methods to requesting <a href="https://developer.apple.com/documentation/photokit/phphotolibrary">Photo Library</a> permissions</p>
 <h2 id="overview-4"><a class="header" href="#overview-4">Overview</a></h2>
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+<p>It would be required if your app wants to access camera or photo library.
+Will trigger only in <code>install</code> event. Does not have webview actions yet.</p>
 <h2 id="topics-4"><a class="header" href="#topics-4">Topics</a></h2>
-<h3 id="group-2"><a class="header" href="#group-2"><!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@--></a></h3>
-<ul>
-<li><!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@--></li>
-</ul>
+<h3 id="infoplist-1"><a class="header" href="#infoplist-1">info.plist</a></h3>
+<p>Add <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nsphotolibraryusagedescription">NSPhotoLibraryUsageDescription</a> and <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription">NSCameraUsageDescription</a> permissions to info.plist</p>
+<pre><code class="language-xml">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;
+&lt;string&gt;If you want to use the photolibrary, you have to give permission.&lt;/string&gt;
+&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;
+&lt;string&gt;If you want to use the camera, you have to give permission.&lt;/string&gt;
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlcontacts"><a class="header" href="#jlcontacts"><code>JLContacts</code></a></h1>
 <p>The Contacts extension provides APIs to access the user’s contact information. </p>
 <h2 id="overview-5"><a class="header" href="#overview-5">Overview</a></h2>
@@ -579,7 +610,7 @@ $cookies.remove().then(val =&gt; alert(val));
 &quot;address&quot;: String,
 &quot;addresses&quot;: Array
 </code></pre>
-<h3 id="actions-1"><a class="header" href="#actions-1">Actions</a></h3>
+<h3 id="actions-3"><a class="header" href="#actions-3">Actions</a></h3>
 <ul>
 <li><code>$contacts.all()</code>: Returns a <code>promise</code> with all the contacts.</li>
 </ul>
