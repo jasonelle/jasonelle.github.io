@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>JLContacts - Jasonelle Documentation</title>
+        <title>Templates - Jasonelle Documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="../xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="../xcode/Changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="../xcode/Templates.html"><strong aria-hidden="true">4.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="../xcode/Extensions.html"><strong aria-hidden="true">5.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="../xcode/JLATTrackingManager.html"><strong aria-hidden="true">6.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="../xcode/JLApplicationBadge.html"><strong aria-hidden="true">7.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="../xcode/JLCookies.html"><strong aria-hidden="true">8.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="../xcode/JLKeychain.html"><strong aria-hidden="true">9.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="../xcode/JLPhotoLibrary.html"><strong aria-hidden="true">10.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="../xcode/JLContacts.html" class="active"><strong aria-hidden="true">11.</strong> JLContacts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="../xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="../xcode/Changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="../xcode/Templates.html" class="active"><strong aria-hidden="true">4.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="../xcode/Extensions.html"><strong aria-hidden="true">5.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="../xcode/JLATTrackingManager.html"><strong aria-hidden="true">6.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="../xcode/JLApplicationBadge.html"><strong aria-hidden="true">7.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="../xcode/JLCookies.html"><strong aria-hidden="true">8.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="../xcode/JLKeychain.html"><strong aria-hidden="true">9.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="../xcode/JLPhotoLibrary.html"><strong aria-hidden="true">10.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="../xcode/JLContacts.html"><strong aria-hidden="true">11.</strong> JLContacts</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,106 +141,30 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="jlcontacts"><a class="header" href="#jlcontacts"><code>JLContacts</code></a></h1>
-<p>The Contacts extension provides APIs to access the user’s contact information. </p>
-<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<p>An iOS app linked on or after iOS 10 needs to include in its <code>Info.plist</code> file the usage description keys for the types of data it needs to access or it crashes. To access Contacts data specifically, it needs to include <code>NSContactsUsageDescription</code>.</p>
-<h3 id="more-info"><a class="header" href="#more-info">More Info</a></h3>
-<ul>
-<li><a href="https://developer.apple.com/documentation/contacts?language=objc">Contacts Framework</a></li>
-<li><a href="https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW14">NSContactsUsageDescription</a></li>
-</ul>
-<h2 id="topics"><a class="header" href="#topics">Topics</a></h2>
-<h3 id="schema"><a class="header" href="#schema">Schema</a></h3>
-<pre><code class="language-txt">&quot;name&quot;: String,
-&quot;lastname&quot;: String,
-&quot;phone&quot;: String,
-&quot;phones&quot;: Array,
-&quot;email&quot;: String,
-&quot;emails: Array,
-&quot;address&quot;: String,
-&quot;addresses&quot;: Array
-</code></pre>
-<h3 id="actions"><a class="header" href="#actions">Actions</a></h3>
-<ul>
-<li><code>$contacts.all()</code>: Returns a <code>promise</code> with all the contacts.</li>
-</ul>
-<p>Example Return:</p>
-<pre><code class="language-json">[{
-    &quot;phone&quot;: &quot;5555648583&quot;,
-    &quot;phones&quot;: [&quot;5555648583&quot;, &quot;4155553695&quot;],
-    &quot;emails&quot;: [&quot;kate-bell@mac.com&quot;],
-    &quot;address&quot;: &quot;165 Davis Street\nHillsborough CA 94010&quot;,
-    &quot;lastname&quot;: &quot;Bell&quot;,
-    &quot;addresses&quot;: [&quot;165 Davis Street\nHillsborough CA 94010&quot;],
-    &quot;email&quot;: &quot;kate-bell@mac.com&quot;,
-    &quot;name&quot;: &quot;Kate&quot;
-}, {
-    &quot;phone&quot;: &quot;5554787672&quot;,
-    &quot;phones&quot;: [&quot;5554787672&quot;, &quot;4085555270&quot;, &quot;4085553514&quot;],
-    &quot;emails&quot;: [&quot;d-higgins@mac.com&quot;],
-    &quot;address&quot;: &quot;332 Laguna Street\nCorte Madera CA 94925\nUSA&quot;,
-    &quot;lastname&quot;: &quot;Higgins&quot;,
-    &quot;addresses&quot;: [&quot;332 Laguna Street\nCorte Madera CA 94925\nUSA&quot;],
-    &quot;email&quot;: &quot;d-higgins@mac.com&quot;,
-    &quot;name&quot;: &quot;Daniel&quot;
-}, {
-    &quot;phone&quot;: &quot;8885555512&quot;,
-    &quot;phones&quot;: [&quot;8885555512&quot;, &quot;8885551212&quot;],
-    &quot;emails&quot;: [&quot;John-Appleseed@mac.com&quot;],
-    &quot;address&quot;: &quot;3494 Kuhl Avenue\nAtlanta GA 30303\nUSA&quot;,
-    &quot;lastname&quot;: &quot;Appleseed&quot;,
-    &quot;addresses&quot;: [&quot;3494 Kuhl Avenue\nAtlanta GA 30303\nUSA&quot;, &quot;1234 Laurel Street\nAtlanta GA 30303\nUSA&quot;],
-    &quot;email&quot;: &quot;John-Appleseed@mac.com&quot;,
-    &quot;name&quot;: &quot;John&quot;
-}, {
-    &quot;phone&quot;: &quot;5555228243&quot;,
-    &quot;phones&quot;: [&quot;5555228243&quot;],
-    &quot;emails&quot;: [&quot;anna-haro@mac.com&quot;],
-    &quot;address&quot;: &quot;1001  Leavenworth Street\nSausalito CA 94965\nUSA&quot;,
-    &quot;lastname&quot;: &quot;Haro&quot;,
-    &quot;addresses&quot;: [&quot;1001  Leavenworth Street\nSausalito CA 94965\nUSA&quot;],
-    &quot;email&quot;: &quot;anna-haro@mac.com&quot;,
-    &quot;name&quot;: &quot;Anna&quot;
-}, {
-    &quot;phone&quot;: &quot;5557664823&quot;,
-    &quot;phones&quot;: [&quot;5557664823&quot;, &quot;7075551854&quot;],
-    &quot;emails&quot;: [&quot;hank-zakroff@mac.com&quot;],
-    &quot;address&quot;: &quot;1741 Kearny Street\nSan Rafael CA 94901&quot;,
-    &quot;lastname&quot;: &quot;Zakroff&quot;,
-    &quot;addresses&quot;: [&quot;1741 Kearny Street\nSan Rafael CA 94901&quot;],
-    &quot;email&quot;: &quot;hank-zakroff@mac.com&quot;,
-    &quot;name&quot;: &quot;Hank&quot;
-}, {
-    &quot;phone&quot;: &quot;5556106679&quot;,
-    &quot;phones&quot;: [&quot;5556106679&quot;],
-    &quot;emails&quot;: [],
-    &quot;address&quot;: &quot;1747 Steuart Street\nTiburon CA 94920\nUSA&quot;,
-    &quot;lastname&quot;: &quot;Taylor&quot;,
-    &quot;addresses&quot;: [&quot;1747 Steuart Street\nTiburon CA 94920\nUSA&quot;],
-    &quot;email&quot;: &quot;&quot;,
-    &quot;name&quot;: &quot;David&quot;
-}]
-</code></pre>
-<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
-<p><strong>Alert</strong></p>
-<p>Join all the contacts by the first name in a single string.
-And present an alert.</p>
-<pre><code class="language-js">$contacts.all().then(val =&gt; alert(val.reduce((acc, v) =&gt; acc + v.name + ' ', '')))
-</code></pre>
-<p><strong>Log</strong></p>
-<p>Logs the resulting object.</p>
-<pre><code class="language-js">$contacts.all().then(info =&gt; $logger.trace(JSON.stringify(info)))
-</code></pre>
+                        <h1 id="templates"><a class="header" href="#templates">Templates</a></h1>
+<p>A template is a pre configured <em>App.xcworkspace</em> file that
+is tailored for a specific use case.</p>
+<p>They are meant to be used as an starting point for your application.</p>
+<p>You can easily update the core if needed, just by replacing the directories.</p>
+<h2 id="cocoapods-template"><a class="header" href="#cocoapods-template"><a href="https://github.com/jasonelle/jasonelle/tree/template/cocoapods">Cocoapods Template</a></a></h2>
+<p>If you want to use <a href="https://cocoapods.org/">Cocoapods</a> you can use this starter template.</p>
+<p><a href="https://github.com/jasonelle/jasonelle/archive/refs/heads/template/cocoapods.zip">Download</a></p>
+<h2 id="onesignal-template"><a class="header" href="#onesignal-template"><a href="https://github.com/jasonelle/jasonelle/tree/template/onesignal">OneSignal Template</a></a></h2>
+<p>If you want to use <a href="https://documentation.onesignal.com/docs/ios-sdk-setup">OneSignal SDK</a> you can use this starter template.</p>
+<p>It contains the pre configured project. But it needs the specific configurations, such as capabilities, groups and other user related settings.</p>
+<p><a href="https://github.com/jasonelle/jasonelle/archive/refs/heads/template/onesignal.zip">Download</a></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../xcode/JLPhotoLibrary.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../xcode/Changelog.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next" href="../xcode/Extensions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -248,10 +172,13 @@ And present an alert.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../xcode/JLPhotoLibrary.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../xcode/Changelog.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next" href="../xcode/Extensions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
