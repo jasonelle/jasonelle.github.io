@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>JLCookies - Jasonelle Documentation</title>
+        <title>JLReachability - Jasonelle Documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="../xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="../xcode/Changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="../xcode/Templates.html"><strong aria-hidden="true">4.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="../xcode/Extensions.html"><strong aria-hidden="true">5.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="../xcode/JLATTrackingManager.html"><strong aria-hidden="true">6.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="../xcode/JLApplicationBadge.html"><strong aria-hidden="true">7.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="../xcode/JLCookies.html" class="active"><strong aria-hidden="true">8.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="../xcode/JLKeychain.html"><strong aria-hidden="true">9.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="../xcode/JLPhotoLibrary.html"><strong aria-hidden="true">10.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="../xcode/JLContacts.html"><strong aria-hidden="true">11.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="../xcode/JLReachability.html"><strong aria-hidden="true">12.</strong> JLReachability</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="../xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="../xcode/Changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="../xcode/Templates.html"><strong aria-hidden="true">4.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="../xcode/Extensions.html"><strong aria-hidden="true">5.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="../xcode/JLATTrackingManager.html"><strong aria-hidden="true">6.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="../xcode/JLApplicationBadge.html"><strong aria-hidden="true">7.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="../xcode/JLCookies.html"><strong aria-hidden="true">8.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="../xcode/JLKeychain.html"><strong aria-hidden="true">9.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="../xcode/JLPhotoLibrary.html"><strong aria-hidden="true">10.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="../xcode/JLContacts.html"><strong aria-hidden="true">11.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="../xcode/JLReachability.html" class="active"><strong aria-hidden="true">12.</strong> JLReachability</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,52 +141,72 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="jlcookies"><a class="header" href="#jlcookies"><code>JLCookies</code></a></h1>
-<p>A helper to work with the <code>WebView</code> cookies.</p>
+                        <h1 id="jlreachability"><a class="header" href="#jlreachability"><code>JLReachability</code></a></h1>
+<p>Helps to detect when access to internet was lost.</p>
 <ul>
 <li>Since: <code>3.0.1</code></li>
 </ul>
 <h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<p>Requires <a href="JLKeychain.html"><code>$keychain</code></a> extension.</p>
+<p>Sends a notification event inside the <em>WebView</em> and <em>NSNotificationCenter</em>.</p>
 <h2 id="topics"><a class="header" href="#topics">Topics</a></h2>
+<h3 id="status"><a class="header" href="#status">Status</a></h3>
+<pre><code class="language-js">const reachability = {
+    // Apple NetworkStatus Compatible Names.
+    status: {
+        not_reachable: 0,
+        wwan_reachable: 1,
+        cellular_reachable: 1, // the same as wwan, just to have ubiquotus language
+        wifi_reachable: 2
+    },
+    status_names: {
+       0: &quot;No Connection&quot;,
+       1: &quot;Cellular&quot;,
+       2: &quot;Wifi&quot;
+    }
+};
+</code></pre>
 <h3 id="actions"><a class="header" href="#actions">Actions</a></h3>
 <ul>
-<li><code>$cookies.set</code>: Stores document.cookie in keychain.</li>
-<li><code>$cookies.get</code>: Gets cookie value stored in keychain.</li>
-<li><code>$cookies.remove</code>: Removes cookies value from keychain.</li>
-<li><code>$cookies.write</code>: Gets the cookie value stored in keychain and write it to document.cookie.</li>
-<li><code>$cookies.Cookies</code>: <a href="https://github.com/js-cookie/js-cookie">js-cookie</a> Helper.</li>
+<li><code>$reachability.get</code>: Returns the current reachability object.</li>
 </ul>
-<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
-<p><strong>Sets the cookie and save it to keychain</strong></p>
-<pre><code class="language-js">// Set a value inside document.cookies
-$cookies.Cookies.set('name', 'Ethan'); 
-
-// Save the document.cookies to keychain.
-$cookies.set().then(val =&gt; alert(val));
+<p><strong>Schema</strong></p>
+<pre><code class="language-js">{
+    &quot;status&quot;: Number, // Status of the Connection
+    &quot;reachable&quot;: Boolean, // true if is reachable
+    &quot;label&quot;: String // String with the current connection label
+}
 </code></pre>
-<p><strong>Gets the current cookie value from keychain</strong></p>
-<pre><code class="language-js">$cookies.get().then(val =&gt; alert(val));
+<p><strong>Example</strong></p>
+<pre><code class="language-js">$reachability.get().then(result =&gt; alert(result.label));
 </code></pre>
-<p><strong>Reads cookie from keychain and then writes to document.cookie</strong></p>
-<pre><code class="language-js">$cookies.write().then(val =&gt; alert(val));
+<h3 id="events"><a class="header" href="#events">Events</a></h3>
+<ul>
+<li><code>$reachability.events.changed</code>: Triggered when a change in reachability is detected.</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">document.addEventListener(&quot;$reachability.events.changed&quot;, function(e) {
+    $logger.trace(&quot;Reachability Changed: &quot; + JSON.stringify(e.detail));
+});
 </code></pre>
-<p><strong>Removes cookies from keychain</strong></p>
-<pre><code class="language-js">$cookies.Cookies.remove('name'); 
-$cookies.remove().then(val =&gt; alert(val));
+<h3 id="notification"><a class="header" href="#notification">Notification</a></h3>
+<p>An <a href="https://developer.apple.com/documentation/foundation/nsnotification">NSNotification</a> is sent with the name <code>kReachabilityChangedNotification</code>.</p>
+<pre><code class="language-objc">// Here we set up a NSNotification observer. The Reachability that caused the notification
+// is passed in the object parameter
+[[NSNotificationCenter defaultCenter] addObserver:self
+                                         selector:@selector(reachabilityChanged:)
+                                             name:kReachabilityChangedNotification
+                                           object:nil];
 </code></pre>
+<p>See more details at <a href="https://github.com/tonymillion/Reachability">Tony Million's Reachability Docs</a>.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../xcode/JLApplicationBadge.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../xcode/JLContacts.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../xcode/JLKeychain.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -194,13 +214,10 @@ $cookies.remove().then(val =&gt; alert(val));
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../xcode/JLApplicationBadge.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../xcode/JLContacts.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../xcode/JLKeychain.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>

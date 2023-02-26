@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">4.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">5.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">6.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">7.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">8.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">9.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">10.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">11.</strong> JLContacts</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">4.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">5.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">6.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">7.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">8.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">9.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">10.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">11.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="xcode/JLReachability.html"><strong aria-hidden="true">12.</strong> JLReachability</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -288,6 +288,9 @@ If not present will allow all urls</p>
 </li>
 <li>
 <p>Added event triggering in webview for extensions.</p>
+</li>
+<li>
+<p>Added <em>Reachability</em> Events Extension.</p>
 </li>
 </ul>
 <h3 id="fixed"><a class="header" href="#fixed">Fixed</a></h3>
@@ -515,6 +518,9 @@ return (JLApplicationBadge *) [self.app.ext get:JLApplicationBadge.class];
 Request user authorization to access app-related data for tracking the user or the device.
 Ensure to configure the plist as well.
 If your app calls the App Tracking Transparency API, you must provide custom text, known as a usage-description string, which displays as a system-permission alert request. The usage-description string tells the user why the app is requesting permission to use data for tracking the user or the device.</p>
+<ul>
+<li>Since: <code>3.0.1</code></li>
+</ul>
 <h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
 <p>Request user authorization to access app-related data for tracking the user or the device.</p>
 <h2 id="topics"><a class="header" href="#topics">Topics</a></h2>
@@ -527,6 +533,9 @@ If your app calls the App Tracking Transparency API, you must provide custom tex
 <p>Returns the current <a href="https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanagerauthorizationstatus?language=objc">status</a> for the ATTracking.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlapplicationbadge"><a class="header" href="#jlapplicationbadge"><code>JLApplicationBadge</code></a></h1>
 <p>Can manipulate <a href="https://developer.apple.com/documentation/uikit/uiapplication/1622918-applicationiconbadgenumber">Application Icon Badge Number</a> </p>
+<ul>
+<li>Since: <code>3.0.1</code></li>
+</ul>
 <h2 id="overview-1"><a class="header" href="#overview-1">Overview</a></h2>
 <p>The number currently set as the badge of the app icon on the Home screen.</p>
 <h2 id="topics-1"><a class="header" href="#topics-1">Topics</a></h2>
@@ -541,6 +550,9 @@ $badge.clear();
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlcookies"><a class="header" href="#jlcookies"><code>JLCookies</code></a></h1>
 <p>A helper to work with the <code>WebView</code> cookies.</p>
+<ul>
+<li>Since: <code>3.0.1</code></li>
+</ul>
 <h2 id="overview-2"><a class="header" href="#overview-2">Overview</a></h2>
 <p>Requires <a href="xcode/JLKeychain.html"><code>$keychain</code></a> extension.</p>
 <h2 id="topics-2"><a class="header" href="#topics-2">Topics</a></h2>
@@ -572,6 +584,9 @@ $cookies.remove().then(val =&gt; alert(val));
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlkeychain"><a class="header" href="#jlkeychain"><code>JLKeychain</code></a></h1>
 <p>Keychain extension allows storing values inside <a href="https://developer.apple.com/documentation/security/keychain_services?language=objc"><em>iOS Keychain</em></a></p>
+<ul>
+<li>Since: <code>3.0.1</code></li>
+</ul>
 <h2 id="overview-3"><a class="header" href="#overview-3">Overview</a></h2>
 <p>Keychain is made as a key - value secure storage.</p>
 <h2 id="topics-3"><a class="header" href="#topics-3">Topics</a></h2>
@@ -597,6 +612,9 @@ $keychain.clear();
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlphotolibrary"><a class="header" href="#jlphotolibrary"><code>JLPhotoLibrary</code></a></h1>
 <p>Provides methods to requesting <a href="https://developer.apple.com/documentation/photokit/phphotolibrary">Photo Library</a> permissions</p>
+<ul>
+<li>Since: <code>3.0.1</code></li>
+</ul>
 <h2 id="overview-4"><a class="header" href="#overview-4">Overview</a></h2>
 <p>It would be required if your app wants to access camera or photo library.
 Will trigger only in <code>install</code> event. Does not have webview actions yet.</p>
@@ -640,6 +658,9 @@ such as parental controls being in place.</p>
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlcontacts"><a class="header" href="#jlcontacts"><code>JLContacts</code></a></h1>
 <p>The Contacts extension provides APIs to access the user’s contact information. </p>
+<ul>
+<li>Since: <code>3.0.1</code></li>
+</ul>
 <h2 id="overview-5"><a class="header" href="#overview-5">Overview</a></h2>
 <p>An iOS app linked on or after iOS 10 needs to include in its <code>Info.plist</code> file the usage description keys for the types of data it needs to access or it crashes. To access Contacts data specifically, it needs to include <code>NSContactsUsageDescription</code>.</p>
 <h3 id="more-info"><a class="header" href="#more-info">More Info</a></h3>
@@ -729,6 +750,63 @@ And present an alert.</p>
 <p>Logs the resulting object.</p>
 <pre><code class="language-js">$contacts.all().then(info =&gt; $logger.trace(JSON.stringify(info)))
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jlreachability"><a class="header" href="#jlreachability"><code>JLReachability</code></a></h1>
+<p>Helps to detect when access to internet was lost.</p>
+<ul>
+<li>Since: <code>3.0.1</code></li>
+</ul>
+<h2 id="overview-6"><a class="header" href="#overview-6">Overview</a></h2>
+<p>Sends a notification event inside the <em>WebView</em> and <em>NSNotificationCenter</em>.</p>
+<h2 id="topics-6"><a class="header" href="#topics-6">Topics</a></h2>
+<h3 id="status-1"><a class="header" href="#status-1">Status</a></h3>
+<pre><code class="language-js">const reachability = {
+    // Apple NetworkStatus Compatible Names.
+    status: {
+        not_reachable: 0,
+        wwan_reachable: 1,
+        cellular_reachable: 1, // the same as wwan, just to have ubiquotus language
+        wifi_reachable: 2
+    },
+    status_names: {
+       0: &quot;No Connection&quot;,
+       1: &quot;Cellular&quot;,
+       2: &quot;Wifi&quot;
+    }
+};
+</code></pre>
+<h3 id="actions-5"><a class="header" href="#actions-5">Actions</a></h3>
+<ul>
+<li><code>$reachability.get</code>: Returns the current reachability object.</li>
+</ul>
+<p><strong>Schema</strong></p>
+<pre><code class="language-js">{
+    &quot;status&quot;: Number, // Status of the Connection
+    &quot;reachable&quot;: Boolean, // true if is reachable
+    &quot;label&quot;: String // String with the current connection label
+}
+</code></pre>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">$reachability.get().then(result =&gt; alert(result.label));
+</code></pre>
+<h3 id="events"><a class="header" href="#events">Events</a></h3>
+<ul>
+<li><code>$reachability.events.changed</code>: Triggered when a change in reachability is detected.</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">document.addEventListener(&quot;$reachability.events.changed&quot;, function(e) {
+    $logger.trace(&quot;Reachability Changed: &quot; + JSON.stringify(e.detail));
+});
+</code></pre>
+<h3 id="notification"><a class="header" href="#notification">Notification</a></h3>
+<p>An <a href="https://developer.apple.com/documentation/foundation/nsnotification">NSNotification</a> is sent with the name <code>kReachabilityChangedNotification</code>.</p>
+<pre><code class="language-objc">// Here we set up a NSNotification observer. The Reachability that caused the notification
+// is passed in the object parameter
+[[NSNotificationCenter defaultCenter] addObserver:self
+                                         selector:@selector(reachabilityChanged:)
+                                             name:kReachabilityChangedNotification
+                                           object:nil];
+</code></pre>
+<p>See more details at <a href="https://github.com/tonymillion/Reachability">Tony Million's Reachability Docs</a>.</p>
 
                     </main>
 
