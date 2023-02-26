@@ -151,10 +151,14 @@
 Will trigger only in <code>install</code> event. Does not have webview actions yet.</p>
 <h2 id="topics"><a class="header" href="#topics">Topics</a></h2>
 <h3 id="actions"><a class="header" href="#actions">Actions</a></h3>
-<h4 id="photolibrarygranted"><a class="header" href="#photolibrarygranted"><code>$photolibrary.granted</code></a></h4>
+<h4 id="photolibrarygranted"><a class="header" href="#photolibrarygranted"><code>$photolibrary.granted()</code></a></h4>
 <p>Returns <code>Promise.resolve(Bool)</code> if the permission is granted.</p>
-<h4 id="photolibraryauthorize"><a class="header" href="#photolibraryauthorize"><code>$photolibrary.authorize</code></a></h4>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">$photolibrary.granted().then(granted =&gt; alert(granted));
+</code></pre>
+<h4 id="photolibraryauthorizeshowalert--false"><a class="header" href="#photolibraryauthorizeshowalert--false"><code>$photolibrary.authorize(showAlert = false)</code></a></h4>
 <p>Returns <code>Promise.resolve(Int)</code> with the Authorization Status.</p>
+<p>If <code>showAlert = true</code> then it will prompt an alert requesting the user go <em>Settings</em>.</p>
 <p>The returned number corresponds to <a href="https://developer.apple.com/documentation/photokit/phauthorizationstatus"><code>PHAuthorizationStatus</code></a></p>
 <ul>
 <li>
@@ -180,6 +184,9 @@ such as parental controls being in place.</p>
 <li><em>PHAuthorizationStatusLimited</em> = 4</li>
 </ul>
 <p>User has authorized this application for limited photo library access. Add <em>PHPhotoLibraryPreventAutomaticLimitedAccessAlert</em> = YES to the application's Info.plist to prevent the automatic alert to update the users limited library selection.</p>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">$photolibrary.authorize().then(status =&gt; $logger.trace(status));
+</code></pre>
 <h3 id="infoplist"><a class="header" href="#infoplist"><code>info.plist</code></a></h3>
 <p>Add <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nsphotolibraryusagedescription">NSPhotoLibraryUsageDescription</a> and <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription">NSCameraUsageDescription</a> permissions to info.plist</p>
 <pre><code class="language-xml">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;
