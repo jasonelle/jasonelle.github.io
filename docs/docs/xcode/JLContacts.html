@@ -165,10 +165,16 @@
 &quot;addresses&quot;: Array
 </code></pre>
 <h3 id="actions"><a class="header" href="#actions">Actions</a></h3>
+<h4 id="contactsall"><a class="header" href="#contactsall"><code>$contacts.all()</code></a></h4>
+<p>Returns a <code>promise</code> with all the contacts.</p>
 <ul>
-<li><code>$contacts.all()</code>: Returns a <code>promise</code> with all the contacts.</li>
+<li>
+<p>Since 3.0.1</p>
+</li>
+<li>
+<p>Return</p>
+</li>
 </ul>
-<p>Example Return:</p>
 <pre><code class="language-json">[{
     &quot;phone&quot;: &quot;5555648583&quot;,
     &quot;phones&quot;: [&quot;5555648583&quot;, &quot;4155553695&quot;],
@@ -225,6 +231,19 @@
     &quot;name&quot;: &quot;David&quot;
 }]
 </code></pre>
+<h4 id="contactsauthorize"><a class="header" href="#contactsauthorize"><code>$contacts.authorize()</code></a></h4>
+<p>Starts the authorization flow. Returns an Promise. Resolves with object with the authorization status. Rejects with an error message. </p>
+<ul>
+<li>Since 3.0.2</li>
+<li>Schema</li>
+</ul>
+<pre><code class="language-json">&quot;granted&quot;: &quot;Bool&quot;,
+&quot;status&quot;: {
+    &quot;id&quot;: &quot;CNAuthorizationStatus&quot;,
+    &quot;name&quot;: &quot;String&quot;
+}
+</code></pre>
+<p><code>status.id</code> referes to <a href="https://developer.apple.com/documentation/contacts/cnauthorizationstatus?language=objc">CNAuthorizationStatus</a>.</p>
 <h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
 <p><strong>Alert</strong></p>
 <p>Join all the contacts by the first name in a single string.
@@ -234,6 +253,9 @@ And present an alert.</p>
 <p><strong>Log</strong></p>
 <p>Logs the resulting object.</p>
 <pre><code class="language-js">$contacts.all().then(info =&gt; $logger.trace(JSON.stringify(info)))
+</code></pre>
+<p><strong>Authorize</strong></p>
+<pre><code class="language-js">const authorizeContacts = () =&gt; $contacts.authorize().then(res =&gt; alert(res.status.name));
 </code></pre>
 
                     </main>

@@ -145,12 +145,33 @@
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>.</p>
 <h2 id="v302-next"><a class="header" href="#v302-next">v3.0.2 (next)</a></h2>
+<h3 id="added"><a class="header" href="#added">Added</a></h3>
+<ul>
+<li>[JLContacts] Added <code>$contacts.authorize()</code> function. Now the extension would not trigger authorization on install.</li>
+</ul>
+<h3 id="changed"><a class="header" href="#changed">Changed</a></h3>
+<ul>
+<li>[Core] Improved the way the example html file is generated. Now extensions can add the examples on compilation time.</li>
+</ul>
+<p>Add a <code>example.html</code> file. Fill it with the examples for the extension.
+Add a Build Phase Script in the framework project.</p>
+<pre><code class="language-bash">NAME=&quot;MyExtension&quot;
+EXAMPLES_DIR=&quot;${PWD}/../../App/Files/Examples&quot;
+TEMPLATES_DIR=&quot;${EXAMPLES_DIR}/Templates&quot;
+SOURCES_DIR=&quot;${PWD}/${NAME}&quot;
+
+# Only copy the examples if the examples directory exists
+if [ -d &quot;${EXAMPLES_DIR}&quot; ] 
+then
+ cat &quot;${SOURCES_DIR}/examples.html&quot; &gt; &quot;${EXAMPLES_DIR}/${NAME}.example.html&quot;
+fi
+</code></pre>
 <h3 id="downloads"><a class="header" href="#downloads">Downloads</a></h3>
 <ul>
 <li><a href="https://github.com/jasonelle/jasonelle/archive/refs/heads/main.zip">iOS Main Branch</a></li>
 </ul>
 <h2 id="v301-march-2023"><a class="header" href="#v301-march-2023">v3.0.1 (March 2023)</a></h2>
-<h3 id="added"><a class="header" href="#added">Added</a></h3>
+<h3 id="added-1"><a class="header" href="#added-1">Added</a></h3>
 <ul>
 <li>
 <p>Ability for extensions to inject <em>Javascript</em> to the <em>WKWebView</em> instance.</p>

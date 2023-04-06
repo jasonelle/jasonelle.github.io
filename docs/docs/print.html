@@ -158,13 +158,14 @@
 <ul>
 <li>Use <em>Jasonelle</em>'s technologies and licenses in an ethical way.</li>
 <li>Respect the artifacts license terms and conditions.</li>
+<li>Must put a link to <a href="https://jasonelle.com"><em>Jasonelle's Webpage</em></a> (<em>jasonelle.com</em>) somewhere visible in your app.</li>
 <li>Must not share the license keys with third parties.</li>
 <li>Must not create direct competitors to <em>Jasonelle</em> by rebranding, customizing and reselling the framework and related technologies or services.</li>
 </ul>
 <p>Please select the <strong>License Key</strong> that better fits your project.</p>
 <div class="table-wrapper"><table><thead><tr><th><a href="https://jasonelle.gumroad.com/l/love">Jasonelle Friend's Membership Subscription</a></th><th><a href="https://jasonelle.gumroad.com/l/thanks">Thank you Key</a></th></tr></thead><tbody>
 <tr><td>Monthly Payment Requirement</td><td>Single Payment</td></tr>
-<tr><td>Jasonelle's Membership Keys can be used in any amount of projects, as long as the subscription is maintained.</td><td>This license allows <em>Jasonelle framework</em> to be used by you or one client, in a single commercial end product.</td></tr>
+<tr><td>Jasonelle's Membership Keys can be used up to 5 projects, as long as the subscription is maintained.</td><td>This license allows <em>Jasonelle framework</em> to be used by you or one client, in a single commercial end product.</td></tr>
 <tr><td>The license expires if the membership is terminated</td><td>Thank you key licenses do not expire. That's why they are a little more expensive than the subscription.</td></tr>
 <tr><td><a href="https://jasonelle.gumroad.com/l/love">Join Subscription</a></td><td><a href="https://jasonelle.gumroad.com/l/thanks">Purchase Thank you Key</a></td></tr>
 </tbody></table>
@@ -189,10 +190,12 @@ are a kind person who will <strong>activate this mode ethically</strong>.</p>
 <ul>
 <li><a href="https://github.com/jasonelle/jasonelle/releases">https://github.com/jasonelle/jasonelle/releases</a></li>
 </ul>
-<h3 id="current-version"><a class="header" href="#current-version">Current Version</a></h3>
+<h3 id="downloads"><a class="header" href="#downloads">Downloads</a></h3>
 <p>The current version is <em>v3</em>.</p>
 <ul>
-<li><a href="https://github.com/jasonelle/jasonelle/releases/latest">Download</a></li>
+<li><a href="https://github.com/jasonelle/jasonelle/archive/refs/heads/main.zip">Bleeding Edge</a></li>
+<li><a href="https://github.com/jasonelle/jasonelle/archive/refs/heads/stable.zip">Stable</a></li>
+<li><a href="https://github.com/jasonelle/jasonelle/releases/latest/">Latest Release</a></li>
 </ul>
 <h2 id="documentation"><a class="header" href="#documentation">Documentation</a></h2>
 <p>The projects documentation is inside the <code>jasonelle.github.io</code> repository. You can access it online at:</p>
@@ -211,7 +214,7 @@ are a kind person who will <strong>activate this mode ethically</strong>.</p>
     Ninjas.cl
   </a>.
 </p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ios-version-301"><a class="header" href="#ios-version-301">iOS Version <code>3.0.1</code></a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ios-version"><a class="header" href="#ios-version">iOS Version</a></h1>
 <p>This small guide will help you getting started.</p>
 <h2 id="requirements"><a class="header" href="#requirements">Requirements</a></h2>
 <ul>
@@ -250,12 +253,33 @@ If not present will allow all urls</p>
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>.</p>
 <h2 id="v302-next"><a class="header" href="#v302-next">v3.0.2 (next)</a></h2>
-<h3 id="downloads"><a class="header" href="#downloads">Downloads</a></h3>
+<h3 id="added"><a class="header" href="#added">Added</a></h3>
+<ul>
+<li>[JLContacts] Added <code>$contacts.authorize()</code> function. Now the extension would not trigger authorization on install.</li>
+</ul>
+<h3 id="changed"><a class="header" href="#changed">Changed</a></h3>
+<ul>
+<li>[Core] Improved the way the example html file is generated. Now extensions can add the examples on compilation time.</li>
+</ul>
+<p>Add a <code>example.html</code> file. Fill it with the examples for the extension.
+Add a Build Phase Script in the framework project.</p>
+<pre><code class="language-bash">NAME=&quot;MyExtension&quot;
+EXAMPLES_DIR=&quot;${PWD}/../../App/Files/Examples&quot;
+TEMPLATES_DIR=&quot;${EXAMPLES_DIR}/Templates&quot;
+SOURCES_DIR=&quot;${PWD}/${NAME}&quot;
+
+# Only copy the examples if the examples directory exists
+if [ -d &quot;${EXAMPLES_DIR}&quot; ] 
+then
+ cat &quot;${SOURCES_DIR}/examples.html&quot; &gt; &quot;${EXAMPLES_DIR}/${NAME}.example.html&quot;
+fi
+</code></pre>
+<h3 id="downloads-1"><a class="header" href="#downloads-1">Downloads</a></h3>
 <ul>
 <li><a href="https://github.com/jasonelle/jasonelle/archive/refs/heads/main.zip">iOS Main Branch</a></li>
 </ul>
 <h2 id="v301-march-2023"><a class="header" href="#v301-march-2023">v3.0.1 (March 2023)</a></h2>
-<h3 id="added"><a class="header" href="#added">Added</a></h3>
+<h3 id="added-1"><a class="header" href="#added-1">Added</a></h3>
 <ul>
 <li>
 <p>Ability for extensions to inject <em>Javascript</em> to the <em>WKWebView</em> instance.</p>
@@ -309,7 +333,7 @@ If not present will allow all urls</p>
 <p><code>build.sh</code> crashed when using paths with spaces.</p>
 </li>
 </ul>
-<h3 id="downloads-1"><a class="header" href="#downloads-1">Downloads</a></h3>
+<h3 id="downloads-2"><a class="header" href="#downloads-2">Downloads</a></h3>
 <ul>
 <li><a href="https://github.com/jasonelle/jasonelle/releases/tag/v3.0.1">Github Release</a></li>
 </ul>
@@ -321,13 +345,13 @@ If not present will allow all urls</p>
 <li>No need for Cocoapods, Carthage or Swift PM.</li>
 <li>Native over the wire workflows delegated to other frameworks like <a href="https://native.live">Native Live</a>.</li>
 </ul>
-<h3 id="downloads-2"><a class="header" href="#downloads-2">Downloads</a></h3>
+<h3 id="downloads-3"><a class="header" href="#downloads-3">Downloads</a></h3>
 <ul>
 <li><a href="https://github.com/jasonelle/jasonelle/releases/tag/v3.0.0">Github Release</a></li>
 </ul>
 <h2 id="legacy-versions-2016---2022"><a class="header" href="#legacy-versions-2016---2022">Legacy Versions (2016 - 2022)</a></h2>
 <p>These versions are not currently supported, but maybe something can be learned or be useful. These were using the old engine created originally by <a href="https://github.com/gliechtenstein"><em>Ethan</em></a>. (MIT License).</p>
-<h3 id="downloads-3"><a class="header" href="#downloads-3">Downloads</a></h3>
+<h3 id="downloads-4"><a class="header" href="#downloads-4">Downloads</a></h3>
 <ul>
 <li>
 <p><a href="https://github.com/jasonelle-archive/jasonette-android/archive/refs/heads/develop.zip">Android v2</a></p>
@@ -699,10 +723,16 @@ such as parental controls being in place.</p>
 &quot;addresses&quot;: Array
 </code></pre>
 <h3 id="actions-4"><a class="header" href="#actions-4">Actions</a></h3>
+<h4 id="contactsall"><a class="header" href="#contactsall"><code>$contacts.all()</code></a></h4>
+<p>Returns a <code>promise</code> with all the contacts.</p>
 <ul>
-<li><code>$contacts.all()</code>: Returns a <code>promise</code> with all the contacts.</li>
+<li>
+<p>Since 3.0.1</p>
+</li>
+<li>
+<p>Return</p>
+</li>
 </ul>
-<p>Example Return:</p>
 <pre><code class="language-json">[{
     &quot;phone&quot;: &quot;5555648583&quot;,
     &quot;phones&quot;: [&quot;5555648583&quot;, &quot;4155553695&quot;],
@@ -759,6 +789,19 @@ such as parental controls being in place.</p>
     &quot;name&quot;: &quot;David&quot;
 }]
 </code></pre>
+<h4 id="contactsauthorize"><a class="header" href="#contactsauthorize"><code>$contacts.authorize()</code></a></h4>
+<p>Starts the authorization flow. Returns an Promise. Resolves with object with the authorization status. Rejects with an error message. </p>
+<ul>
+<li>Since 3.0.2</li>
+<li>Schema</li>
+</ul>
+<pre><code class="language-json">&quot;granted&quot;: &quot;Bool&quot;,
+&quot;status&quot;: {
+    &quot;id&quot;: &quot;CNAuthorizationStatus&quot;,
+    &quot;name&quot;: &quot;String&quot;
+}
+</code></pre>
+<p><code>status.id</code> referes to <a href="https://developer.apple.com/documentation/contacts/cnauthorizationstatus?language=objc">CNAuthorizationStatus</a>.</p>
 <h3 id="examples-2"><a class="header" href="#examples-2">Examples</a></h3>
 <p><strong>Alert</strong></p>
 <p>Join all the contacts by the first name in a single string.
@@ -768,6 +811,9 @@ And present an alert.</p>
 <p><strong>Log</strong></p>
 <p>Logs the resulting object.</p>
 <pre><code class="language-js">$contacts.all().then(info =&gt; $logger.trace(JSON.stringify(info)))
+</code></pre>
+<p><strong>Authorize</strong></p>
+<pre><code class="language-js">const authorizeContacts = () =&gt; $contacts.authorize().then(res =&gt; alert(res.status.name));
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="jlreachability"><a class="header" href="#jlreachability"><code>JLReachability</code></a></h1>
 <p>Helps to detect when access to internet was lost.</p>
