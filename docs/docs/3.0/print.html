@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">4.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">5.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">6.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">7.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">8.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">9.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">10.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">11.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="xcode/JLReachability.html"><strong aria-hidden="true">12.</strong> JLReachability</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">4.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">5.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">6.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">7.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">8.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">9.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">10.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">11.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="xcode/JLReachability.html"><strong aria-hidden="true">12.</strong> JLReachability</a></li><li class="chapter-item expanded "><a href="xcode/JLAudio.html"><strong aria-hidden="true">13.</strong> JLAudio</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -255,7 +255,12 @@ If not present will allow all urls</p>
 <h2 id="v302-next"><a class="header" href="#v302-next">v3.0.2 (next)</a></h2>
 <h3 id="added"><a class="header" href="#added">Added</a></h3>
 <ul>
-<li>[JLContacts] Added <code>$contacts.authorize()</code> function. Now the extension would not trigger authorization on install.</li>
+<li>
+<p>[JLContacts] Added <code>$contacts.authorize()</code> function. Now the extension would not trigger authorization on install.</p>
+</li>
+<li>
+<p>[JLAudio] Added <code>$audio</code> extension. It has <code>$audio.player</code>, <code>$audio.recorder</code> and <code>$audio.vibrate</code> functions.</p>
+</li>
 </ul>
 <h3 id="changed"><a class="header" href="#changed">Changed</a></h3>
 <ul>
@@ -874,6 +879,131 @@ And present an alert.</p>
                                            object:nil];
 </code></pre>
 <p>See more details at <a href="https://github.com/tonymillion/Reachability">Tony Million's Reachability Docs</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jlaudio"><a class="header" href="#jlaudio"><code>JLAudio</code></a></h1>
+<p>A simple wrapper to record and play audio files using the native device apis.</p>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<h2 id="overview-7"><a class="header" href="#overview-7">Overview</a></h2>
+<h2 id="topics-7"><a class="header" href="#topics-7">Topics</a></h2>
+<h3 id="vibration"><a class="header" href="#vibration">Vibration</a></h3>
+<h4 id="audiovibrate"><a class="header" href="#audiovibrate"><code>$audio.vibrate()</code></a></h4>
+<ul>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Sends the vibration alarm sound. Works for iPhones regardless of silent switch position.</p>
+<h3 id="audio-player-actions"><a class="header" href="#audio-player-actions">Audio Player Actions</a></h3>
+<p>This interacts directly with <a href="https://developer.apple.com/documentation/avfoundation/avplayer?language=objc"><code>AVPlayer</code></a>.</p>
+<p>The current player support up to 16 channels. With channel 0 as the default.
+You can individually play each channel and set options such as volume.</p>
+<h4 id="audioplayerloadurl-options--channel--0-volume--1"><a class="header" href="#audioplayerloadurl-options--channel--0-volume--1"><code>$audio.player.load(url, options = {channel = 0, volume = 1})</code></a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>Loads an audio file from a remote url. </p>
+<h4 id="audioplayerplaychannel--0-options--"><a class="header" href="#audioplayerplaychannel--0-options--"><code>$audio.player.play(channel = 0, options = {})</code></a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>Plays the audio file at the given channel with options.
+Defaults to channel <code>0</code>.</p>
+<h4 id="audioplayerpausechannel--0-options--"><a class="header" href="#audioplayerpausechannel--0-options--"><code>$audio.player.pause(channel = 0, options = {})</code></a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>Pauses the audio file playing at given channel with options.
+Defaults to channel <code>0</code>.</p>
+<h3 id="audio-recording-actions"><a class="header" href="#audio-recording-actions">Audio Recording Actions</a></h3>
+<h4 id="audiorecorderauthorize"><a class="header" href="#audiorecorderauthorize"><code>$audio.recorder.authorize()</code></a></h4>
+<ul>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Authorizes audio recording capabilities. Must set <a href="https://developer.apple.com/documentation/bundleresources/information_property_list/nsmicrophoneusagedescription"><code>NSMicrophoneUsageDescription</code></a> in <code>info.plist</code>.</p>
+<p>Returns a <code>Promise</code>. Rejects it if access was not granted.</p>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">$audio.recorder.authorize().then(granted =&gt; $logger.trace(`Audio Recording is granted?: ${granted}`))
+   .catch(message =&gt; $logger.trace(&quot;Audio Recording Authorization Not Granted&quot;));
+</code></pre>
+<h4 id="audiorecorderrecord"><a class="header" href="#audiorecorderrecord"><code>$audio.recorder.record()</code></a></h4>
+<ul>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Starts recording. Triggers <code>$audio.recorder.status.event</code> every <code>0.5</code> seconds.</p>
+<h4 id="audiorecorderstop"><a class="header" href="#audiorecorderstop"><code>$audio.recorder.stop()</code></a></h4>
+<ul>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Stops the current recording. Triggers <code>$audio.recorder.finished.event</code>.</p>
+<h4 id="audiorecorderpause"><a class="header" href="#audiorecorderpause"><code>$audio.recorder.pause()</code></a></h4>
+<ul>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Pauses/Resumes the current recording.</p>
+<h4 id="events-1"><a class="header" href="#events-1">Events</a></h4>
+<h5 id="audiorecorderstatusevent"><a class="header" href="#audiorecorderstatusevent"><code>$audio.recorder.status.event</code></a></h5>
+<ul>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Returns the current status for the recording and additional information.</p>
+<p><strong>event.detail</strong></p>
+<pre><code class="language-objc">{
+    &quot;file&quot;: {
+        &quot;url&quot;: self.file.absoluteString,
+        &quot;url_components&quot;: self.file.pathComponents
+    },
+    &quot;state&quot;: self.state,
+    &quot;settings&quot;: self.settings,
+    &quot;time&quot;: {
+        &quot;audio&quot;: {
+            &quot;formatted&quot;: [self timeStringForTimeInterval:self.recorder.currentTime],
+            &quot;current&quot;: self.recorder.currentTime,
+        },
+        &quot;device&quot;: {
+            &quot;formatted&quot;: [self timeStringForTimeInterval:self.recorder.deviceCurrentTime],
+            &quot;current&quot;: self.recorder.deviceCurrentTime
+        }
+    },
+}
+</code></pre>
+<h5 id="audiorecorderfinishedevent"><a class="header" href="#audiorecorderfinishedevent"><code>$audio.recorder.finished.event</code></a></h5>
+<ul>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>The recording ended and returns the information for the file.
+Audio data is encoded in a <code>Base64</code> string so it can be easily send via http requests.</p>
+<p><strong>event.detail</strong></p>
+<pre><code class="language-objc">{
+    &quot;status&quot;: self.currentStatus,
+    &quot;file&quot;: {
+        &quot;url&quot;: self.file.absoluteString,
+        &quot;url_components&quot;: self.file.pathComponents,
+        &quot;data&quot;: self.base64Data,
+        &quot;uri&quot;: self.base64DataURI,
+        &quot;content_type&quot;: self.contentType,
+        &quot;time&quot;: {
+            &quot;formatted&quot;: self.duration,
+            &quot;total&quot;: self.seconds,
+        }
+    }
+    
+}
+</code></pre>
+<h5 id="audiorecordererrorevent"><a class="header" href="#audiorecordererrorevent"><code>$audio.recorder.error.event</code></a></h5>
+<ul>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Returns some information if there was an error recording. </p>
+<p><strong>event.detail</strong></p>
+<pre><code class="language-objc">{
+   &quot;message&quot;: error.localizedDescription,
+   &quot;code&quot;: error.code,
+   &quot;info&quot;: error.userInfo,
+   &quot;file&quot;: {
+        &quot;url&quot;: self.file.absoluteString,
+        &quot;url_components&quot;: self.file.pathComponents
+    }
+}
+</code></pre>
 
                     </main>
 
