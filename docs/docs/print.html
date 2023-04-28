@@ -223,7 +223,15 @@ are a kind person who will <strong>activate this mode ethically</strong>.</p>
 </ul>
 <h2 id="steps"><a class="header" href="#steps">Steps</a></h2>
 <h3 id="1---download-the-project"><a class="header" href="#1---download-the-project">1 - Download the project</a></h3>
-<p>Download <a href="https://github.com/jasonelle/jasonelle/archive/refs/heads/main.zip">Bleeding Edge</a> or <a href="https://github.com/jasonelle/jasonelle/releases/latest">Stable version</a>. We recommend bleeding edge for the latest features and stable for the more battle tested.</p>
+<p>Download <a href="https://github.com/jasonelle/jasonelle/archive/refs/heads/main.zip">Bleeding Edge</a> or <a href="https://github.com/jasonelle/jasonelle/releases/latest">Stable version</a>.</p>
+<ul>
+<li>
+<p><a href="https://github.com/jasonelle/jasonelle/archive/refs/heads/main.zip">Bleeding Edge</a>: Latest updates, features and bug fixes. Built-in extensions enabled by default.</p>
+</li>
+<li>
+<p><a href="https://github.com/jasonelle/jasonelle/releases/latest">Stable version</a>: Battle tested. Built-in extensions disabled by default.</p>
+</li>
+</ul>
 <p>Decompress and open <code>App.xcworkspace</code> file (White icon).</p>
 <p>Find <a href="https://github.com/jasonelle/jasonelle/blob/main/sources/xcode/App/JS/lib/screens/main.js"><code>sources/xcode/App/JS/lib/screens/main.js</code></a>.</p>
 <h3 id="2---configure-your-website"><a class="header" href="#2---configure-your-website">2 - Configure your website</a></h3>
@@ -249,6 +257,13 @@ If not present will allow all urls</p>
 <h3 id="4---done"><a class="header" href="#4---done">4 - Done</a></h3>
 <p>You can now configure your project as a normal XCode iOS. Change your App Icon and other settings.</p>
 <p>Happy Coding!.</p>
+<h2 id="arm-processors-m1-m2"><a class="header" href="#arm-processors-m1-m2">ARM Processors (M1, M2...)</a></h2>
+<p>Ensure that you are running the <code>arm</code> binaries by appending <code>-arm</code> to the binaries names inside <code>build</code> file, as shown below.</p>
+<ul>
+<li>ESBUILD=${SRCROOT}/../Tools/esbuild/esbuild-arm</li>
+<li>DPRINT=${SRCROOT}/../Tools/dprint/dprint-arm</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/292738/235188291-a198de0a-c508-4b58-a32a-c4b98209d62e.jpeg" alt="MacOS ARM" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="changelog"><a class="header" href="#changelog">Changelog</a></h1>
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>.</p>
