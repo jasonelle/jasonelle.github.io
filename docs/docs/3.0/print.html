@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">3.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">4.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">5.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">6.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">7.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">8.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">9.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">10.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">11.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="xcode/JLReachability.html"><strong aria-hidden="true">12.</strong> JLReachability</a></li><li class="chapter-item expanded "><a href="xcode/JLAudio.html"><strong aria-hidden="true">13.</strong> JLAudio</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">4.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">5.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">6.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">7.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">8.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">9.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">10.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">11.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">12.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="xcode/JLReachability.html"><strong aria-hidden="true">13.</strong> JLReachability</a></li><li class="chapter-item expanded "><a href="xcode/JLAudio.html"><strong aria-hidden="true">14.</strong> JLAudio</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -265,6 +265,50 @@ If not present will allow all urls</p>
 <li>DPRINT=${SRCROOT}/../Tools/dprint/dprint-arm</li>
 </ul>
 <p><img src="https://user-images.githubusercontent.com/292738/235188291-a198de0a-c508-4b58-a32a-c4b98209d62e.jpeg" alt="MacOS ARM" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="architecture"><a class="header" href="#architecture">Architecture</a></h1>
+<p>Jasonelle's architecture is mainly composed of two different <a href="https://developer.apple.com/documentation/javascriptcore/jscontext">JavaScript Contexts</a>. One is in the <em>Kernel</em> and the other is in the <a href="https://developer.apple.com/documentation/webkit/wkwebview"><em>WKWebView</em></a> instance.</p>
+<h2 id="jlkernel"><a class="header" href="#jlkernel">JLKernel</a></h2>
+<p>The <em>JLKernel</em> is the main project for bootstrapping <em>Jasonelle</em>. It allows to
+communicate with the <em>WKWebView</em> and other tasks.</p>
+<h3 id="jsengine"><a class="header" href="#jsengine">JSEngine</a></h3>
+<p>It's main tasks are:</p>
+<ul>
+<li>Load configurations and other Javascript files, evaluate them and return the results.</li>
+<li>Inject Javascript code to a Kernel Javascript Context (separated from the WebView).</li>
+<li>Can use <a href="https://nodejs.org/docs/v0.4.1/api/modules.html">node_modules</a> to allow use of external dependencies (they must be web browser compatible).</li>
+</ul>
+<p>You can use the <em>JSEngine</em> by modifing the <a href="https://github.com/jasonelle/jasonelle/blob/main/sources/xcode/App/JS/lib/screens/main.js"><code>main.js.</code></a> file.</p>
+<h4 id="mainjs"><a class="header" href="#mainjs">main.js</a></h4>
+<p>The <code>main.js</code> file is capable of the following:</p>
+<ul>
+<li>Import code from <code>node_modules</code>.</li>
+<li>Define new <code>actions</code> than can be called from the webview using <code>$agent.call()</code>.</li>
+<li>Listen to native events in <code>hooks</code>.</li>
+<li>Configure native components (<code>$pull</code>).</li>
+</ul>
+<h4 id="built-in-js-functions"><a class="header" href="#built-in-js-functions">Built-in JS Functions</a></h4>
+<p>Some of the built-in functions are the following:</p>
+<ul>
+<li><code>i18n</code>: Enables using native translation strings functions. So you can translate using <a href="https://developer.apple.com/documentation/xcode/adding-support-for-languages-and-regions/">Localizable.strings</a> files.</li>
+<li><code>color</code>: Enables generating colors in native formats.</li>
+<li><code>uuid</code>: Enables generating <code>uuidv4</code> strings.</li>
+<li><code>log</code>: Enables logging with native logger.</li>
+<li><code>openURL</code>: Enables opening an URL like <code>sms://</code>, <code>tel://</code>, <code>mailto://</code>, <code>facetime://</code>.</li>
+</ul>
+<h2 id="webviewrenderer"><a class="header" href="#webviewrenderer">WebViewRenderer</a></h2>
+<p>Is the project that will render the <code>WKWebView</code>. You can inject Javascript code directly using the <a href="https://github.com/jasonelle/jasonelle/blob/main/sources/xcode/App/JS/webview.js"><code>webview.js</code></a> file.</p>
+<p><strong>Extensions</strong> will be mainly interacting with this component to inject new native functionality.</p>
+<p>This is the <code>Web Browser</code>, it will have access to all your Javascript files and DOM. You can use it to modify behaviours and pass special params.</p>
+<p>The following variables are injected to <code>window</code> by default:</p>
+<ul>
+<li><code>$agent</code>: Use this to call methods defined in <em>Extensions</em> and <code>main.js</code>.</li>
+<li><code>$logger</code>: Use this to call the native logger.</li>
+<li><code>jasonelle</code>: This variable contains info like <em>Jasonelle</em>'s version. Use this to detect if you are inside a <em>Jasonelle Web Wrapper</em> in your website.</li>
+</ul>
+<pre><code class="language-js">if (window.jasonelle &amp;&amp; window.jasonelle.ready) {
+  // Jasonelle Detected
+}
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="changelog"><a class="header" href="#changelog">Changelog</a></h1>
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>.</p>
