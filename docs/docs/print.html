@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">4.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">5.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">6.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">7.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">8.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">9.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">10.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">11.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">12.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="xcode/JLReachability.html"><strong aria-hidden="true">13.</strong> JLReachability</a></li><li class="chapter-item expanded "><a href="xcode/JLAudio.html"><strong aria-hidden="true">14.</strong> JLAudio</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">4.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">5.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">6.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">7.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">8.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">9.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">10.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">11.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">12.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="xcode/JLReachability.html"><strong aria-hidden="true">13.</strong> JLReachability</a></li><li class="chapter-item expanded "><a href="xcode/JLAudio.html"><strong aria-hidden="true">14.</strong> JLAudio</a></li><li class="chapter-item expanded "><a href="xcode/JLDevice.html"><strong aria-hidden="true">15.</strong> JLDevice</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -1107,6 +1107,68 @@ Audio data is encoded in a <code>Base64</code> string so it can be easily send v
         &quot;url&quot;: self.file.absoluteString,
         &quot;url_components&quot;: self.file.pathComponents
     }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jldevice"><a class="header" href="#jldevice"><code>JLDevice</code></a></h1>
+<p>Enables access to device's info.</p>
+<h2 id="overview-8"><a class="header" href="#overview-8">Overview</a></h2>
+<p>Provides access to the current device model, size, system and vendor identifiers.</p>
+<h2 id="topics-8"><a class="header" href="#topics-8">Topics</a></h2>
+<h3 id="actions-6"><a class="header" href="#actions-6">Actions</a></h3>
+<ul>
+<li>
+<p><code>$device.info()</code></p>
+</li>
+<li>
+<p>Since: <code>3.0.2</code></p>
+</li>
+</ul>
+<p>Returns an object with current device info.</p>
+<p><strong>Example</strong></p>
+<pre><code class="language-js">const deviceInfo = () =&gt; $device.info().then(info =&gt; {
+    $logger.trace(info);
+    alert(info.env.hw.name);
+});
+</code></pre>
+<pre><code class="language-text">{
+    env =     {
+        hw =         {
+            id = 0;
+            name = simulator;
+        };
+        type =         {
+            id = 1;
+            name = develop;
+        };
+    };
+    license =     {
+        enabled = 1;
+    };
+    process =     {
+        device =         {
+            model =             {
+                localized = iPhone;
+                name = iPhone;
+            };
+            name = &quot;iPhone SE (2nd generation)&quot;;
+            orientation =             {
+                id = 1;
+                portrait = 1;
+            };
+            size =             {
+                height = 667;
+                width = 375;
+            };
+            system =             {
+                name = iOS;
+                simulator = 1;
+                version = &quot;14.0.1&quot;;
+            };
+        };
+        identifiers =         {
+            vendor = &quot;32DD46B4-323B-4396-B3CA-BE232104423&quot;;
+        };
+    };
 }
 </code></pre>
 
