@@ -148,29 +148,33 @@
 <h3 id="added"><a class="header" href="#added">Added</a></h3>
 <ul>
 <li>
+<p>[JLClipboard] Added <code>$clipboard.set(text)</code> and <code>$clipboard.get()</code> functions. This will allow copy and access text in native clipboard.</p>
+</li>
+<li>
+<p>[JLDevice] Added <code>$device.info()</code> function. To provide access to native device information.</p>
+</li>
+<li>
 <p>[JLContacts] Added <code>$contacts.authorize()</code> function. Now the extension would not trigger authorization on install.</p>
 </li>
 <li>
 <p>[JLAudio] Added <code>$audio</code> extension. It has <code>$audio.player</code>, <code>$audio.recorder</code> and <code>$audio.vibrate</code> functions.</p>
 </li>
 <li>
+<p>[JLPhotoLibrary] Added <code>$photolibrary.camera.authorize()</code> and <code>$photolibrary.camera.granted()</code> functions. The extension no longer triggers authorization on install.</p>
+</li>
+<li>
 <p>[Core] Added a <em>Makefile</em> command to fix &quot;bad interpreter: Operation not permitted&quot; errors. This error maybe caused by downloading bash files from untrusted sources. Execute <code>make permissions</code> inside <code>sources/xcode</code> directory to fix any compilation problems with that issue.</p>
+</li>
+<li>
+<p>[Core] Add a <code>example.html</code> file. Fill it with the examples for the extension.</p>
+</li>
+<li>
+<p>[Core] Add a Build Phase Script in the framework project.</p>
 </li>
 </ul>
 <h3 id="changed"><a class="header" href="#changed">Changed</a></h3>
 <ul>
-<li>
-<p>[JLPhotoLibrary] Added <code>$photolibrary.camera.authorize()</code> and <code>$photolibrary.camera.granted()</code> functions. The extension no longer triggers authorization on install.</p>
-</li>
-<li>
-<p>[Core] Improved the way the example html file is generated. Now extensions can add the examples on compilation time.</p>
-</li>
-<li>
-<p>Add a <code>example.html</code> file. Fill it with the examples for the extension.</p>
-</li>
-<li>
-<p>Add a Build Phase Script in the framework project.</p>
-</li>
+<li>[Core] Improved the way the example html file is generated. Now extensions can add the examples on compilation time.</li>
 </ul>
 <pre><code class="language-bash">NAME=&quot;MyExtension&quot;
 EXAMPLES_DIR=&quot;${PWD}/../../App/Files/Examples&quot;
@@ -178,7 +182,7 @@ TEMPLATES_DIR=&quot;${EXAMPLES_DIR}/Templates&quot;
 SOURCES_DIR=&quot;${PWD}/${NAME}&quot;
 
 # Only copy the examples if the examples directory exists
-if [ -d &quot;${EXAMPLES_DIR}&quot; ] 
+if [ -d &quot;${EXAMPLES_DIR}&quot; ]
 then
  cat &quot;${SOURCES_DIR}/examples.html&quot; &gt; &quot;${EXAMPLES_DIR}/${NAME}.example.html&quot;
 fi
