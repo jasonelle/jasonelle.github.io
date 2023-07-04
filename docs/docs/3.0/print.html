@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">4.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">5.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">6.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">7.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">8.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">9.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">10.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">11.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">12.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="xcode/JLReachability.html"><strong aria-hidden="true">13.</strong> JLReachability</a></li><li class="chapter-item expanded "><a href="xcode/JLAudio.html"><strong aria-hidden="true">14.</strong> JLAudio</a></li><li class="chapter-item expanded "><a href="xcode/JLDevice.html"><strong aria-hidden="true">15.</strong> JLDevice</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">4.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">5.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">6.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">7.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">8.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">9.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">10.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">11.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">12.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="xcode/JLReachability.html"><strong aria-hidden="true">13.</strong> JLReachability</a></li><li class="chapter-item expanded "><a href="xcode/JLAudio.html"><strong aria-hidden="true">14.</strong> JLAudio</a></li><li class="chapter-item expanded "><a href="xcode/JLDevice.html"><strong aria-hidden="true">15.</strong> JLDevice</a></li><li class="chapter-item expanded "><a href="xcode/JLClipboard.html"><strong aria-hidden="true">16.</strong> JLClipboard</a></li><li class="chapter-item expanded "><a href="xcode/JLToast.html"><strong aria-hidden="true">17.</strong> JLToast</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -1174,6 +1174,135 @@ Audio data is encoded in a <code>Base64</code> string so it can be easily send v
         };
     };
 }
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jlclipboard"><a class="header" href="#jlclipboard"><code>JLClipboard</code></a></h1>
+<p>Handles native Clipboard actions</p>
+<h2 id="overview-9"><a class="header" href="#overview-9">Overview</a></h2>
+<p>Provides access to native clipboard</p>
+<h2 id="topics-9"><a class="header" href="#topics-9">Topics</a></h2>
+<h3 id="actions-7"><a class="header" href="#actions-7">Actions</a></h3>
+<ul>
+<li><code>$clipboard.set(text)</code></li>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Copy text to the native clipboard.</p>
+<pre><code class="language-js">$clipboard.set(&quot;Hello&quot;)
+</code></pre>
+<ul>
+<li><code>$clipboard.get()</code></li>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Returns the current text in the native clipboard.</p>
+<pre><code class="language-js">$clipboard.get().then(text =&gt; alert(text));
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jltoast"><a class="header" href="#jltoast"><code>JLToast</code></a></h1>
+<p>Present different message <code>Toast</code> and banners that allow displaying quick information using native features.</p>
+<h2 id="overview-10"><a class="header" href="#overview-10">Overview</a></h2>
+<p>Useful if you want to present information to the user.</p>
+<h2 id="topics-10"><a class="header" href="#topics-10">Topics</a></h2>
+<h3 id="loading-indicator"><a class="header" href="#loading-indicator">Loading Indicator</a></h3>
+<p>The loading indicator can show a task is executing and will block any other interaction until the task is ready.</p>
+<h4 id="toastloadingshow"><a class="header" href="#toastloadingshow">``$toast.loading.show`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a loading indicator (will block any other interaction).</p>
+<pre><code class="language-js">$toast.loading.show();
+</code></pre>
+<h4 id="toastloadinghide"><a class="header" href="#toastloadinghide">``$toast.loading.hide`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will hide the loading indicator (if present).</p>
+<pre><code class="language-js">$toast.loading.hide();
+</code></pre>
+<h3 id="toast"><a class="header" href="#toast">Toast</a></h3>
+<p>The toast is a small message that can appear from top, center or bottom of the screen for a few seconds.</p>
+<h4 id="toastshowtext-options--type-position-duration"><a class="header" href="#toastshowtext-options--type-position-duration">``$toast.show(text, options = {type, position, duration})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.show(&quot;Hello!&quot;);
+</code></pre>
+<h4 id="toastdarktext-options--"><a class="header" href="#toastdarktext-options--">``$toast.dark(text, options = {})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text in dark background for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.dark(&quot;Hello!&quot;);
+</code></pre>
+<h4 id="toasterrortext-options--"><a class="header" href="#toasterrortext-options--">``$toast.error(text, options = {})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text in red background for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.error(&quot;Hello!&quot;);
+</code></pre>
+<h4 id="toastsuccesstext-options--"><a class="header" href="#toastsuccesstext-options--">``$toast.success(text, options = {})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text in green background for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.success(&quot;Hello!&quot;);
+</code></pre>
+<h4 id="toastwarningtext-options--"><a class="header" href="#toastwarningtext-options--">``$toast.warning(text, options = {})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text in yellow background for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.warning(&quot;Hello!&quot;);
+</code></pre>
+<h4 id="toastinfotext-options--"><a class="header" href="#toastinfotext-options--">``$toast.info(text, options = {})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text in white background for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.info(&quot;Hello!&quot;);
+</code></pre>
+<h3 id="banner"><a class="header" href="#banner">Banner</a></h3>
+<p>The banner is an element that always appears from the upper part. Similar to a <em>Push Notification</em> UX.</p>
+<h4 id="toastbannershowtext-options--type-duration"><a class="header" href="#toastbannershowtext-options--type-duration">``$toast.banner.show(text, options = {type, duration})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.banner.show(&quot;Hello!&quot;);
+</code></pre>
+<h4 id="toastbannerdarktext-options--"><a class="header" href="#toastbannerdarktext-options--">``$toast.banner.dark(text, options = {})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text in dark background for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.dark(&quot;Hello!&quot;);
+</code></pre>
+<h4 id="toastbannererrortext-options--"><a class="header" href="#toastbannererrortext-options--">``$toast.banner.error(text, options = {})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text in red background for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.error(&quot;Hello!&quot;);
+</code></pre>
+<h4 id="toastbannersuccesstext-options--"><a class="header" href="#toastbannersuccesstext-options--">``$toast.banner.success(text, options = {})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text in green background for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.success(&quot;Hello!&quot;);
+</code></pre>
+<h4 id="toastbannerwarningtext-options--"><a class="header" href="#toastbannerwarningtext-options--">``$toast.banner.warning(text, options = {})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text in yellow background for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.warning(&quot;Hello!&quot;);
+</code></pre>
+<h4 id="toastbannerinfotext-options--"><a class="header" href="#toastbannerinfotext-options--">``$toast.banner.info(text, options = {})`</a></h4>
+<ul>
+<li>Since: <code>3.0.2</code></li>
+</ul>
+<p>It will show a text in white background for a given duration (defaults 3 seconds).</p>
+<pre><code class="language-js">$toast.info(&quot;Hello!&quot;);
 </code></pre>
 
                     </main>
