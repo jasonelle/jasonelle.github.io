@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">4.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">5.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">6.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">7.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">8.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">9.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">10.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">11.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">12.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="xcode/JLReachability.html"><strong aria-hidden="true">13.</strong> JLReachability</a></li><li class="chapter-item expanded "><a href="xcode/JLAudio.html"><strong aria-hidden="true">14.</strong> JLAudio</a></li><li class="chapter-item expanded "><a href="xcode/JLDevice.html"><strong aria-hidden="true">15.</strong> JLDevice</a></li><li class="chapter-item expanded "><a href="xcode/JLClipboard.html"><strong aria-hidden="true">16.</strong> JLClipboard</a></li><li class="chapter-item expanded "><a href="xcode/JLToast.html"><strong aria-hidden="true">17.</strong> JLToast</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="xcode/Architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="xcode/Changelog.html"><strong aria-hidden="true">4.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="xcode/Templates.html"><strong aria-hidden="true">5.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="xcode/Extensions.html"><strong aria-hidden="true">6.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="xcode/JLATTrackingManager.html"><strong aria-hidden="true">7.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="xcode/JLApplicationBadge.html"><strong aria-hidden="true">8.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="xcode/JLCookies.html"><strong aria-hidden="true">9.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="xcode/JLKeychain.html"><strong aria-hidden="true">10.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="xcode/JLPhotoLibrary.html"><strong aria-hidden="true">11.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="xcode/JLContacts.html"><strong aria-hidden="true">12.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="xcode/JLReachability.html"><strong aria-hidden="true">13.</strong> JLReachability</a></li><li class="chapter-item expanded "><a href="xcode/JLAudio.html"><strong aria-hidden="true">14.</strong> JLAudio</a></li><li class="chapter-item expanded "><a href="xcode/JLDevice.html"><strong aria-hidden="true">15.</strong> JLDevice</a></li><li class="chapter-item expanded "><a href="xcode/JLClipboard.html"><strong aria-hidden="true">16.</strong> JLClipboard</a></li><li class="chapter-item expanded "><a href="xcode/JLToast.html"><strong aria-hidden="true">17.</strong> JLToast</a></li><li class="chapter-item expanded "><a href="xcode/JLShare.html"><strong aria-hidden="true">18.</strong> JLToast</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -1303,6 +1303,31 @@ Audio data is encoded in a <code>Base64</code> string so it can be easily send v
 </ul>
 <p>It will show a text in white background for a given duration (defaults 3 seconds).</p>
 <pre><code class="language-js">$toast.info(&quot;Hello!&quot;);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="jlshare"><a class="header" href="#jlshare"><code>JLShare</code></a></h1>
+<p>Enables using <a href="https://developer.apple.com/documentation/uikit/uiactivityviewcontroller?language=objc">UIActivityViewController</a>.</p>
+<h2 id="overview-11"><a class="header" href="#overview-11">Overview</a></h2>
+<p>Useful if you want to share text, links and other content to other applications.</p>
+<h2 id="topics-11"><a class="header" href="#topics-11">Topics</a></h2>
+<h3 id="sharetextvalue"><a class="header" href="#sharetextvalue"><code>$share.text(value)</code></a></h3>
+<ul>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Will open share dialog with a text.</p>
+<pre><code class="language-js">const shareText = () =&gt; {
+  $share.text(&quot;Hello World!&quot;);
+};
+</code></pre>
+<h3 id="shareurlvalue"><a class="header" href="#shareurlvalue"><code>$share.url(value)</code></a></h3>
+<ul>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Will open share dialog with an url value. The url must be a valid url, otherwise
+it will be interpreted as a text.</p>
+<p>You can point to public files like images, pdf, audios and videos and they will be recognized as such and shared properly.</p>
+<pre><code class="language-js">const shareImage = () =&gt; {
+    return $share.url(&quot;https://jasonelle.com/docs/jasonelle.png&quot;);
+};
 </code></pre>
 
                     </main>

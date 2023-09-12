@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>JLApplicationBadge - Jasonelle Documentation</title>
+        <title>JLToast - Jasonelle Documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="../xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="../xcode/Architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="../xcode/Changelog.html"><strong aria-hidden="true">4.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="../xcode/Templates.html"><strong aria-hidden="true">5.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="../xcode/Extensions.html"><strong aria-hidden="true">6.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="../xcode/JLATTrackingManager.html"><strong aria-hidden="true">7.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="../xcode/JLApplicationBadge.html" class="active"><strong aria-hidden="true">8.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="../xcode/JLCookies.html"><strong aria-hidden="true">9.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="../xcode/JLKeychain.html"><strong aria-hidden="true">10.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="../xcode/JLPhotoLibrary.html"><strong aria-hidden="true">11.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="../xcode/JLContacts.html"><strong aria-hidden="true">12.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="../xcode/JLReachability.html"><strong aria-hidden="true">13.</strong> JLReachability</a></li><li class="chapter-item expanded "><a href="../xcode/JLAudio.html"><strong aria-hidden="true">14.</strong> JLAudio</a></li><li class="chapter-item expanded "><a href="../xcode/JLDevice.html"><strong aria-hidden="true">15.</strong> JLDevice</a></li><li class="chapter-item expanded "><a href="../xcode/JLClipboard.html"><strong aria-hidden="true">16.</strong> JLClipboard</a></li><li class="chapter-item expanded "><a href="../xcode/JLToast.html"><strong aria-hidden="true">17.</strong> JLToast</a></li><li class="chapter-item expanded "><a href="../xcode/JLShare.html"><strong aria-hidden="true">18.</strong> JLToast</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="../About.html"><strong aria-hidden="true">1.</strong> About</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">iOS</li><li class="chapter-item expanded "><a href="../xcode/Quickstart.html"><strong aria-hidden="true">2.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="../xcode/Architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li class="chapter-item expanded "><a href="../xcode/Changelog.html"><strong aria-hidden="true">4.</strong> Changelog</a></li><li class="chapter-item expanded affix "><li class="part-title">Templates</li><li class="chapter-item expanded "><a href="../xcode/Templates.html"><strong aria-hidden="true">5.</strong> Templates</a></li><li class="chapter-item expanded affix "><li class="part-title">Extensions</li><li class="chapter-item expanded "><a href="../xcode/Extensions.html"><strong aria-hidden="true">6.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="../xcode/JLATTrackingManager.html"><strong aria-hidden="true">7.</strong> JLATTrackingManager</a></li><li class="chapter-item expanded "><a href="../xcode/JLApplicationBadge.html"><strong aria-hidden="true">8.</strong> JLApplicationBadge</a></li><li class="chapter-item expanded "><a href="../xcode/JLCookies.html"><strong aria-hidden="true">9.</strong> JLCookies</a></li><li class="chapter-item expanded "><a href="../xcode/JLKeychain.html"><strong aria-hidden="true">10.</strong> JLKeychain</a></li><li class="chapter-item expanded "><a href="../xcode/JLPhotoLibrary.html"><strong aria-hidden="true">11.</strong> JLPhotoLibrary</a></li><li class="chapter-item expanded "><a href="../xcode/JLContacts.html"><strong aria-hidden="true">12.</strong> JLContacts</a></li><li class="chapter-item expanded "><a href="../xcode/JLReachability.html"><strong aria-hidden="true">13.</strong> JLReachability</a></li><li class="chapter-item expanded "><a href="../xcode/JLAudio.html"><strong aria-hidden="true">14.</strong> JLAudio</a></li><li class="chapter-item expanded "><a href="../xcode/JLDevice.html"><strong aria-hidden="true">15.</strong> JLDevice</a></li><li class="chapter-item expanded "><a href="../xcode/JLClipboard.html"><strong aria-hidden="true">16.</strong> JLClipboard</a></li><li class="chapter-item expanded "><a href="../xcode/JLToast.html"><strong aria-hidden="true">17.</strong> JLToast</a></li><li class="chapter-item expanded "><a href="../xcode/JLShare.html" class="active"><strong aria-hidden="true">18.</strong> JLToast</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,35 +141,40 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="jlapplicationbadge"><a class="header" href="#jlapplicationbadge"><code>JLApplicationBadge</code></a></h1>
-<p>Can manipulate <a href="https://developer.apple.com/documentation/uikit/uiapplication/1622918-applicationiconbadgenumber">Application Icon Badge Number</a> </p>
-<ul>
-<li>Since: <code>3.0.1</code></li>
-</ul>
+                        <h1 id="jlshare"><a class="header" href="#jlshare"><code>JLShare</code></a></h1>
+<p>Enables using <a href="https://developer.apple.com/documentation/uikit/uiactivityviewcontroller?language=objc">UIActivityViewController</a>.</p>
 <h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
-<p>The number currently set as the badge of the app icon on the Home screen.</p>
+<p>Useful if you want to share text, links and other content to other applications.</p>
 <h2 id="topics"><a class="header" href="#topics">Topics</a></h2>
-<h3 id="actions"><a class="header" href="#actions">Actions</a></h3>
+<h3 id="sharetextvalue"><a class="header" href="#sharetextvalue"><code>$share.text(value)</code></a></h3>
 <ul>
-<li><code>$badge.clear</code>: Cleans the badge number icon.</li>
-<li><code>$badge.set</code>: Sets the badge number icon.</li>
+<li>Since <code>3.0.2</code></li>
 </ul>
-<h3 id="example"><a class="header" href="#example">Example</a></h3>
-<pre><code class="language-js">$badge.set(3);
-$badge.clear();
+<p>Will open share dialog with a text.</p>
+<pre><code class="language-js">const shareText = () =&gt; {
+  $share.text(&quot;Hello World!&quot;);
+};
+</code></pre>
+<h3 id="shareurlvalue"><a class="header" href="#shareurlvalue"><code>$share.url(value)</code></a></h3>
+<ul>
+<li>Since <code>3.0.2</code></li>
+</ul>
+<p>Will open share dialog with an url value. The url must be a valid url, otherwise
+it will be interpreted as a text.</p>
+<p>You can point to public files like images, pdf, audios and videos and they will be recognized as such and shared properly.</p>
+<pre><code class="language-js">const shareImage = () =&gt; {
+    return $share.url(&quot;https://jasonelle.com/docs/jasonelle.png&quot;);
+};
 </code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../xcode/JLATTrackingManager.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../xcode/JLToast.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../xcode/JLCookies.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -177,13 +182,10 @@ $badge.clear();
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../xcode/JLATTrackingManager.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../xcode/JLToast.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../xcode/JLCookies.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
